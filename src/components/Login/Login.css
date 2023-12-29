@@ -1,0 +1,159 @@
+/* body{
+  
+background-image: linear-gradient(to right,#98ef73, green, #132e1e);
+align-items: center;
+} */
+
+.hea{ 
+  font-size:30px;
+  margin-bottom: 50px;}
+
+  /* wanted a line under the heading, a small one, didnt work out we broke up TT
+   .line{
+  border: 2px;
+  /* margin-left:50%;
+  color: black; 
+} */
+
+.login-container{
+  margin-bottom: 10rem;
+  margin-left: 30%;
+  margin-right: 30%;
+  margin-top: 5%;
+  justify-content: center;
+  background-color: rgba(229, 229, 229, 0.516);
+  text-align: center;
+  align-items: center;
+  padding: 80px;
+  border-radius: 20px;
+  padding-top: 50px;
+}
+
+.Login-input{
+  text-align: center;
+  align-items: center;
+  margin: 20px; 
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.login-input input{
+  background-color:rgb(239, 228, 228);
+  padding-top: 5px;
+  padding-bottom: 5px;
+  gap: 10px;
+  width: 250px;
+  border-radius: 1px;
+  height:30px;
+  border: #d1a8a8;
+  border-radius: 5px;
+  justify-content:center;
+  padding: 3px;
+  padding-left: 4px;
+}
+
+.btnholder{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+  text-align: center;
+}
+#bio{
+  margin-top: 1rem;
+  background-color:rgb(239, 228, 228);
+  width: 250px;
+  /* border-radius: 1px; */
+  height:100px;
+  border: #d1a8a8;
+  /* border-radius: 5px; */
+  justify-content:center;
+  padding-top: 10px;
+  padding-left: 4px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.login-btn{
+  background-color:rgb(239, 228, 228);
+  width: 10vw;
+  border: #d1a8a8;  
+  height: 5vh;
+  text-align: center;
+  align-items: center;
+  font-size: 15px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.fullbtn{
+  background-color:rgb(239, 228, 228);
+  border: #d1a8a8;  
+  width: 25vw;
+  height: 5vh;
+  text-align: center;
+  align-items: center;
+  font-size: 15px;
+  border-radius: 20px;
+  margin-top: 10px;
+  cursor: pointer;  
+}
+
+.main{
+  display: flex;
+  
+  flex-wrap: wrap;  
+  align-items: center;  
+  justify-content: space-evenly;  
+  flex-direction: row;
+  text-align: center;
+  font-size: medium;
+}
+.div1 {
+  font-size: 15px;
+}
+.div2 {
+  font-size: 15px;
+}
+#name {
+  margin-bottom: 1rem;
+}
+#email {
+  margin-bottom: 1rem;
+}
+#pass {
+  margin-bottom: 1rem;
+}
+
+.div3 {
+  margin-top: 2rem;
+}
+/* .profile-pic {
+  /* color: transparent ; 
+  transition: all .3s ease;
+  /* @include object-center; 
+  position: relative;
+  transition: all .3s ease;
+}
+#output{
+  position: absolute;
+  object-fit: cover;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  justify-content:flex-start;
+  margin: 200px;
+  /* box-shadow: $shadow; 
+  /* border-radius: $radius; 
+  /* z-index: 0; 
+}
+#file{
+  display: none;
+} */
+
+/* media queries*/
+
