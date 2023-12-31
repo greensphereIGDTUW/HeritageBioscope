@@ -1,7 +1,7 @@
 import React from 'react'
 import Navbar from '../../components/Navbar/Navbar';
 import './Writepage.css';
-// import Writeblog from '../components/Home/Writeblog/Writeblog';
+
 
 const Writepage = () => {
   return (

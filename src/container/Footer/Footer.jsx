@@ -1,5 +1,6 @@
 import React from 'react';
-import { FiFacebook, FiTwitter, FiInstagram } from 'react-icons/fi';
+import { Link } from "react-router-dom";
+import { FiFacebook, FiTwitter, FiInstagram, FiMessageCircle, FiLinkedin, FiMail } from 'react-icons/fi';
 import { images } from '../../constants';
 import './Footer.css';
 
@@ -17,9 +18,21 @@ const Footer = () => (
 
       <div className="app__footer-links_logo">
         <div className="app__footer-links_icons">
-          <FiFacebook />
-          <FiTwitter />
-          <FiInstagram />
+        <Link to= 'https://www.facebook.com/greensphere.igdtuw'>
+        <FiFacebook/>
+        </Link>
+        <Link to= 'https://www.instagram.com/heritage_bioscope/'>
+        <FiInstagram />
+        </Link>
+        <Link to= 'projectecho.igdtuw@gmail.com'>
+        <FiMail/>
+        </Link>
+        <Link to= 'https://www.linkedin.com/in/greensphere-igdtuw-9b5552205/'>
+        <FiLinkedin/>
+        </Link>
+          
+          
+          
         </div>
       </div>
 

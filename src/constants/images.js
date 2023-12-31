@@ -30,20 +30,10 @@ import blog04 from '../assets/blog-4.jpg';
 import blog05 from '../assets/blog-5.jpg';
 
 
-// import author1 from '../assets/blog-author.jpg';
-// import author2 from '../assets/blog-author2.jpg';
-// import author3 from '../assets/blog-author3.jpg';
-// import blog1 from '../../assets/blog1.jpg';
-// import blog2 from '../../assets/blog2.jpg';
-// import blog3 from '../../assets/blog3.jpg';
+
 
 export default {
-  // author1,
-  // author2,
-  // author3,
-  // blog1,
-  // blog2,
-  // blog3,
+  
   blog01,
   blog02,
   blog03,
