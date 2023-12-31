@@ -21,8 +21,7 @@ import sign from '../assets/sign.png';
 import quote from '../assets/quote.png';
 import gericht from '../assets/gericht.png';
 import welcome2 from '../assets/welcome-sphere2.jpg';
-import aboutus1 from '../assets/aboutus-1.jpg';
-import aboutus2 from '../assets/aboutus-2.jpg';
+import AboutUs from '../assets/AboutUs.jpeg'; 
 import blog01 from '../assets/blog-1.jpg';
 import blog02 from '../assets/blog-2.jpg';
 import blog03 from '../assets/blog-3.jpg';
@@ -46,8 +45,7 @@ export default {
   gallery02,
   gallery03,
   gallery04,
-  aboutus1,
-  aboutus2,
+  AboutUs,
   knife,
   logo,
   menu,

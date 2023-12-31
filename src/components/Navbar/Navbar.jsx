@@ -12,6 +12,8 @@ const Navbar = () => {
   const [toggleMenu, setToggleMenu] = React.useState(false);
   const { Logout } = useLogout()
   const { user } = useAuthContext()
+  console.log(user); 
+  // console.log(user.email); 
 
   const handleClick = () => {
     Logout()
@@ -38,7 +40,7 @@ const Navbar = () => {
       )}
       {user && (
       <div className ="logout-button">
-            <span>{user.email}</span>
+            <span style = {{color: 'white'}}>{user.email}</span>
             <button className="p__opensans" onClick={handleClick}>Log out</button>
       </div>
       )}
