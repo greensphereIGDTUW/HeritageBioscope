@@ -3,13 +3,12 @@ body {
   margin: 0;
   padding: 0;
 }
-
-header {
-  background-color: #333;
-  color: #fff;
-  padding: 10px;
-  text-align: center;
+.community-container {
+  margin-top: 3rem;
+  margin-bottom: 7rem;
 }
+
+
 
 #posts {
   margin: 20px;
@@ -26,6 +25,7 @@ header {
 }
 
 #new-post {
+  margin-top: 10rem;
   margin: 20px;
   margin-left: 50px;
 }
@@ -39,6 +39,7 @@ header {
 
 .new-post-section {
   justify-content: center;
+  padding-bottom: 5rem;
   max-width: 800px;
   width: 90%; 
   margin: 20px auto;
@@ -50,12 +51,7 @@ header {
 }
 
 
-/* Add this style to move the new-post-section to the left
-@media (min-width: 768px) {
-  .center-container {
-      justify-content: flex-start;
-  }
-} */
+
 
 .form-group {
   margin-bottom: 15px;
@@ -117,23 +113,17 @@ label {
 .btn-success:hover {
   background-color: #0056b3;
 }
-/* .post {
-  Your existing styles for .post
-} */
+
 
 .post-header {
   border-bottom: 1px solid #ccc;
   padding-bottom: 5px;
   
 }
-/*
-.post-content {
-  /* Optional: Add styles for post content 
-}
-*/
+
 .post-actions {
   /* Your existing styles for .post-actions */
-} */
+} 
 
 .heart-box {
   display: inline-block;

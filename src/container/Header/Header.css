@@ -13,6 +13,10 @@
     line-height: 70px;
     font-size: 60px;
 }
+
+.app__wrapper_info p {
+    line-height: 30px;
+}
     
 
 .app__header-img img {
@@ -21,7 +25,8 @@
 }
 
 .custom__button {
-    border-radius: 50%;
+    margin-top: 1rem;
+    box-sizing: 10px;
     border: 5px solid rgba(0, 131, 116, 0.7);
 }
 

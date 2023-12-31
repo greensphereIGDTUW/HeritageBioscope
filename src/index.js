@@ -1,12 +1,13 @@
 // "@babel/plugin-proposal-private-property-in-object" 
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import Blogpage from './pages/Blogpage';
 import Communitypage from './pages/Communitypage';
 import AboutUspage from './pages/AboutUspage';
 import Blog from './container/Blog/index';
 import Writepage from './pages/Writepage/Writepage'
 import Loginpage from './pages/Loginpage';
+import { AuthContextProvider } from './context/AuthContext';
 
 import './index.css';
 import App from './App';
@@ -14,6 +15,7 @@ import {
     createBrowserRouter,
     RouterProvider,
   } from "react-router-dom";
+import Registerpage from './pages/Registerpage';
 
 
   const router = createBrowserRouter([
@@ -45,10 +47,16 @@ import {
         path: "Login",
         element: <Loginpage />,
       },
+      {
+        path: "Register",
+        element: <Registerpage />,
+      },
   ]);
   
   ReactDOM.createRoot(document.getElementById("root")).render(
-    <React.StrictMode>
+    <AuthContextProvider>
+      <React.StrictMode>
       <RouterProvider router={router} />
     </React.StrictMode>
+    </AuthContextProvider>
   );

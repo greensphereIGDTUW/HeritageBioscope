@@ -8,18 +8,12 @@ function Community() {
     { username: 'Anandita', content: 'Another post here.', liked: false, likes: 0 },
   ]);  
 
-  // const [searchTerm, setSearchTerm] = useState(''); 
-  // const [newPostContent, setNewPostContent] = useState(''); 
-  // const [username, setUsername] = useState(''); // Added username state
+  
 
   useEffect(() => { 
     // Display existing posts 
     displayPosts(); 
-  }, []); // Run only once on component mount 
-  // useEffect(() => {
-  //   console.log('Updated Posts Data:', postsData);
-  // }, [postsData]);
-  // Display existing posts or filtered posts based on search term 
+  }, []);  
   function displayPosts() {
     return postsData.map((post, index) => (
       <div key={index} className="post">
@@ -61,8 +55,7 @@ function Community() {
   }
 
   const handleLike = (index) => {
-    // Handle liking a post
-    // For simplicity, let's toggle the like status
+    
     const updatedPosts = [...postsData];
     updatedPosts[index].liked = !updatedPosts[index].liked;
     updatedPosts[index].likes = updatedPosts[index].liked
@@ -80,35 +73,11 @@ function Community() {
     event.target.reset();
   };
 
-  // // Handle search term change 
-  // const handleSearchChange = (event) => { 
-  //   setSearchTerm(event.target.value); 
-  // }; 
-
-  // // Handle new post content change 
-  // const handleNewPostContentChange = (event) => { 
-  //   setNewPostContent(event.target.value); 
-  // }; 
-
+ 
   return ( 
     <div className="community-container"> 
       <div className="left-content"> 
-        {/* <header> 
-          <h1>Your Community</h1> 
-        </header>  */}
-        <section id="search-bar"> 
-          <div className="search-container"> 
-            <span role="img" aria-label="search-icon"> 
-              🔍 
-            </span> 
-            <input 
-              type="text" 
-              placeholder="Type to search..." 
-              // value={searchTerm} 
-              // onChange={handleSearchChange} 
-            /> 
-          </div> 
-        </section> 
+        
         <section id="new-post" className="new-post-section"> 
           <h2>Create Post</h2> 
           <form onSubmit={handlePostSubmit}> 
