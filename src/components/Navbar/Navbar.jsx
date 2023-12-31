@@ -7,6 +7,7 @@ import { GiHamburgerMenu } from 'react-icons/gi';
 import { MdOutlineRestaurantMenu } from 'react-icons/md';
 
 import './Navbar.css';
+import { images } from '../../constants';
 
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = React.useState(false);
@@ -23,6 +24,7 @@ const Navbar = () => {
     <nav className="app__navbar">
       <div className="app__navbar-logo">
       <h1 className= "app__navbar-logo-bigg">Heritage Bioscope</h1>
+      <img src= {images.navbarlogo} width={69} height={69} border-radius= { 90 } alt="" className="logo__image" />
       </div>
       <ul className="app__navbar-links">
         <li className="p__opensans"><Link to= "/">Home</Link></li>
