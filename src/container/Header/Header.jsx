@@ -10,10 +10,7 @@ const Header = () => (
       <SubHeading title="Greensphere-IGDTUW" />
       <h1 className="app__header-h1">Welcome to Heritage Bioscope</h1>
       <p className="p__opensans" style={{ margin: '1rem 0' }}>
-      Welcome to HeritageLore, an innovative project at the intersection of cultural richness and
-      natural beauty in the heart of Delhi. Guided by the visionary tagline "Seeing Cultural heritage 
-      through the Eyes of natural heritage," our initiative seeks to redefine the traditional concept of 
-      heritage by seamlessly blending historical and natural treasures.
+      Welcome to HeritageBioscope, an innovative project at the intersection of cultural richness and natural beauty in the heart of Delhi. Guided by the visionary tagline "Seeing Cultural heritage through the Eyes of natural heritage," our initiative seeks to redefine the traditional concept of heritage by seamlessly blending historical and natural treasures. 
       </p>
       <button type="button" className="custom__button"><Link to= "/Register">Get Started</Link></button>
     </div>

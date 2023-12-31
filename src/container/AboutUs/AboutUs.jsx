@@ -8,11 +8,11 @@ const AboutUs = () => {
     <div className="aboutus-overall">
       <div className="about-section-container">
       <div className="about-background-image-container">
-        <img src={images.AboutUs} width={370} height={270} border-radius= { 20 } alt="" />
+        <img src={images.Aboutus01} width={360} height={240} border-radius= { 20 } alt="" />
       </div>
-      {/* <div className="about-section-image-container">
-        <img src={images.aboutus2} width={370} height={270} border-radius= { 20 } alt="" />
-      </div> */}
+      <div className="about-section-image-container">
+        <img src={images.Aboutus02} width={290} height={350} border-radius= { 20 } alt="" />
+      </div>
       <div className="about-section-text-container">
         <h2 className="primary-subheading">About Us</h2>
         <p className="primary-heading">
