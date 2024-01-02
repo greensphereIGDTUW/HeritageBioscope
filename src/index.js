@@ -1,5 +1,6 @@
 // "@babel/plugin-proposal-private-property-in-object" 
 import React from 'react';
+import { ChakraProvider } from '@chakra-ui/react';
 import ReactDOM from 'react-dom/client';
 import Blogpage from './pages/Blogpage';
 import Communitypage from './pages/Communitypage';
@@ -56,7 +57,9 @@ import Registerpage from './pages/Registerpage';
   ReactDOM.createRoot(document.getElementById("root")).render(
     <AuthContextProvider>
       <React.StrictMode>
+        <ChakraProvider>
       <RouterProvider router={router} />
+      </ChakraProvider>
     </React.StrictMode>
     </AuthContextProvider>
   );

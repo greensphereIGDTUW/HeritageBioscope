@@ -1,25 +1,40 @@
-.blog-wrap {
-  
-  margin: 5rem auto;
-  margin-bottom: 10rem;
-}
-
 .blog-goBack {
   text-decoration: none;
   margin-top: 5rem;
-  margin-left: 2rem;
+  margin-left: -5rem;
   font-size: 1rem;
   color: #a9a9a9;
   font-weight: 500;
   margin-bottom: 2rem;
   display: block;
 }
+.blog-wrap {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin: 5rem auto;
+  margin-bottom: 10rem;
+}
+
+
 .blog-wrap header {
   text-align: center;
+  padding-left: 6.5rem;
+  padding-right: 6.5rem;
   
 }
+.blog-wrap header p {
+  
+  margin-bottom: 1rem;
+  line-height: 5px;
+  font-size: 1rem;
+}
 blog-wrap header h1 {
+  font-family: var(--font-alt);
   color: var(--color-green);
+  
+  font-size: 1.1rem;
+  font-weight: normal;
+  line-height: 0.9rem;
 }
 
 .blog-date {
@@ -29,13 +44,13 @@ blog-wrap header h1 {
 }
 
 .blog-wrap img {
-  margin-left: 13rem;
-  margin-right: 14rem;
+  margin-left: 5rem;
+  margin-right: 5rem;
   max-width: 900px;
   max-height: 400px;
   width: 100%;
   margin-top: 3rem;
-  border-radius: 10px;
+  border-radius: 20px;
   object-fit: cover;
 }
 
@@ -47,8 +62,11 @@ blog-wrap header h1 {
   margin: 1rem;
 }
 .blog-desc {
-  margin-left: 8rem;
-  max-width: 1100px;
+  line-height: 1.7rem;
+  font-size: 13px;
+  margin-left: 4rem;
+  margin-right: 4rem;
+  /* max-width: 1100px; */
   padding: 1rem;
   margin-top: 1.5rem;
 }
