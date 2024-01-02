@@ -52,11 +52,11 @@ const Navbar = () => {
           <div className="app__navbar-smallscreen_overlay flex__center slide-bottom">
             <MdOutlineRestaurantMenu fontSize={27} className="overlay__close" onClick={() => setToggleMenu(false)} />
             <ul className="app__navbar-smallscreen_links">
-              <li><a href="#home" onClick={() => setToggleMenu(false)}>Home</a></li>
-              <li><a href="#about" onClick={() => setToggleMenu(false)}>About Us</a></li>
-              <li><a href="#menu" onClick={() => setToggleMenu(false)}>Blog</a></li>
-              <li><a href="#awards" onClick={() => setToggleMenu(false)}>Community</a></li>
-              <li><a href="#contact" onClick={() => setToggleMenu(false)}>Contact</a></li>
+              <li><a href="#home" onClick={() => setToggleMenu(false)}><Link to= "/">Home</Link></a></li>
+              <li><a href="#about" onClick={() => setToggleMenu(false)}><Link to= "/AboutUS">About Us</Link></a></li>
+              <li><a href="#menu" onClick={() => setToggleMenu(false)}><Link to= "/Blog">Blog </Link></a></li>
+              <li><a href="#awards" onClick={() => setToggleMenu(false)}><Link to= "/Community">Community</Link></a></li>
+              {/* <li><a href="#contact" onClick={() => setToggleMenu(false)}>Contact</a></li> */}
             </ul>
           </div>
         )}
