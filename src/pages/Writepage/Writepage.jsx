@@ -1,5 +1,6 @@
 import React from 'react'
 import Navbar from '../../components/Navbar/Navbar';
+import UploadWidget from '../../components/UploadWidget/UploadWidget';
 import './Writepage.css';
 
 
@@ -17,10 +18,11 @@ const Writepage = () => {
       />
     <form className="writeForm">
         <div className="writeFormGroup">
-          <label htmlFor="fileInput">
+          <label htmlFor="imageInput">
             <i className="writeIcon fas fa-plus"></i>
           </label>
-          <input id="fileInput" type="file" style={{ display: "none" }} />
+          <input type = "file" id = "imageInput" type="file" style={{ display: "none" }} />
+          {/* <UploadWidget /> */}
           <input
             className="writeInput"
             placeholder="Add your Title"
@@ -40,6 +42,7 @@ const Writepage = () => {
           Publish
         </button>
       </form>
+      <UploadWidget></UploadWidget>
     </div>
     
     </div>

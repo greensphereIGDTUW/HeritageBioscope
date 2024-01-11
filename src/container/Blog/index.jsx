@@ -124,7 +124,7 @@ const Blog = () => {
           ))}
         </div> */}
       </header>
-        <img src={blog.cover} alt='cover' /> 
+        <img src={blog.Photo} alt='cover' /> 
       <p className='blog-desc'>{blog.Content}</p>
     </div>
     
