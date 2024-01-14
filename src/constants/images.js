@@ -28,7 +28,7 @@ import blog03 from '../assets/blog-3.jpg';
 import blog04 from '../assets/blog-4.jpg';
 import blog05 from '../assets/blog-5.jpg';
 import Aboutus01 from '../assets/AboutUs.jpeg';
-import navbarlogo from '../assets/logo_final.png';
+import navbarlogo from '../assets/logo_final-modified.png';
 import Aboutus02 from '../assets/green1.jpeg';
 
 
