@@ -8,7 +8,7 @@ const AboutUs = () => {
     <div className="aboutus-overall">
       <div className="about-section-container">
       <div className="about-background-image-container">
-        <img src={images.Aboutus01} width={360} height={240} border-radius= { 20 } alt="" />
+        <img src={images.Aboutus01} width={500} height={300} border-radius= { 20 } alt="" />
       </div>
       <div className="about-section-image-container">
         <img src={images.Aboutus02} width={290} height={350} border-radius= { 20 } alt="" />
@@ -30,20 +30,24 @@ const AboutUs = () => {
         the significance of biodiversity. Guided by the visionary tagline "Seeing Cultural heritage 
         through the Eyes of natural heritage.
 
+        <br />
+        <br />
         </p>
-        <div className="primary-text">
-        <h5>MISSION
-</h5>
+        <div className="primary-heading">
+        <h2><strong><u>MISSION</u></strong></h2>
+        <br />
         <p>
-        The mission of this project is to deepen appreciation for Delhi's cultural, natural, and biocentric heritage, engaging the community in their preservation. We strive to instil a sense of responsibility and pride, fostering a holistic understanding of these interconnected legacies.
-
+        Our mission is to change the view of heritage by using a completely unique angle – "Seeing heritage through the Eyes of Nature.”We aim to redefine history beyond ancient narratives, connecting it with the rich tapestry of biodiversity.  Through network engagement and a holistic approach, we strive to enhance appreciation for Delhi's cultural, natural, and biocentric heritage.
         </p>
+        <br />
         </div>
 
-        <div className="primary-text">
+        <div className="primary-heading">
 
-        <h5>VISION</h5> 
-        <p>Heritage Bioscope came into existence with a VISION that envisions Delhi as a hub of harmonious cultural, natural, and biocentric appreciation. Guided by biocentrism, we leverage technology and community engagement to redefine heritage, inspiring collective responsibility for the rich tapestry of living beings and ecosystems.
+        <h2><strong><u>VISION</u></strong></h2> 
+        <br />
+        <p>At Heritage Bioscope, our visionary outlook propels us toward redefining Delhi as a hub where historical past is viewed through the lens of nature. 
+        Our Vision is to instill a profound sense of responsibility and satisfaction, fostering a collective information that historical past extends beyond the pages of records to include the vibrant ecosystems and living beings that coexist within it.
         </p>
         </div>
         

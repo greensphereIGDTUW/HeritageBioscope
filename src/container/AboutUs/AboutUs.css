@@ -48,6 +48,8 @@
     top: 20px;
     margin-left: 6rem;
     z-index: 1;
+    flex: 0.5;
+    /*flex part is extra*/
   }
   .about-section-image-container {
     width: 100%;

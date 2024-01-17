@@ -8,8 +8,6 @@ body {
   margin-bottom: 7rem;
 }
 
-
-
 #posts {
   margin: 20px;
 }
@@ -19,13 +17,14 @@ body {
   padding: 15px;
   margin-bottom: 10px;
   margin-left: 30px;
-  max-width: 800px;
+  max-width: 500px;
+  max-height: fit-content;
   width: 100%;
   border-radius: 15px;
 }
 
 #new-post {
-  margin-top: 10rem;
+  margin-top: 20rem;
   margin: 20px;
   margin-left: 50px;
 }
@@ -38,6 +37,7 @@ body {
 }
 
 .new-post-section {
+  /* margin: 1000px; */
   justify-content: center;
   padding-bottom: 5rem;
   max-width: 800px;
@@ -49,8 +49,6 @@ body {
   border-radius: 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-
-
 
 
 .form-group {
@@ -73,7 +71,7 @@ label {
 }
 
 .btn-primary {
-  background-color: #64adfa;
+  background-color: #1e7d1f;
   color: #fff;
   padding: 10px 15px;
   margin: 2px;
@@ -83,7 +81,7 @@ label {
 }
 
 .btn-primary:hover {
-  background-color: #537293;
+  background-color: #66ba65;
 }
 
 .btn-secondary {
@@ -102,7 +100,7 @@ label {
 }
 
 .btn-success {
-  background-color: #05305e;
+  background-color: #125e05;
   color: #fff;
   padding: 10px 15px;
   border: none;
@@ -111,7 +109,7 @@ label {
 }
 
 .btn-success:hover {
-  background-color: #0056b3;
+  background-color: #66ba65;
 }
 
 
@@ -258,6 +256,9 @@ label {
 
 .community-container {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 .left-content {
@@ -283,4 +284,29 @@ label {
 
 .blank-box {
   flex: 1; /* Takes up remaining space vertically */
+}
+
+/* .centerPosts{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */
+
+/* PostsPageHeading.css */
+
+.posts-page-heading {
+  text-align: center;
+  margin: 300px 0 0; /* Add margin-top to push it down */
+  z-index: -1000;
+}
+
+.posts-page-heading h1 {
+  font-size: 2.5rem;
+  color: #008080; /* Set your desired color */
+}
+
+.posts-page-heading p {
+  font-size: 1.2rem;
+  color: #555;
+  margin-top: 10px;
 }

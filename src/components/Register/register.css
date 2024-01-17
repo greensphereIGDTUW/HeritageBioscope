@@ -1,16 +1,28 @@
+.page{
+  height: calc(110vh - 50px);
+  background: linear-gradient(
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 0.5)
+  ),
+  url("https://preview.redd.it/mountains-landscape-3d-effect-3840x2160-v0-oeb2qu4evlna1.jpg?auto=webp&s=1625a8eb476809990c97327cd6642fb121d8e783");
+background-size: cover;
+width: 100%;
+padding: 50px;
+
+}
+
+/* .container{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+} */
 
 .register {
-    height: calc(110vh - 50px);
+    /* height: calc(110vh - 50px); */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(
-        rgba(255, 255, 255, 0.5),
-        rgba(255, 255, 255, 0.5)
-      ),
-      url("https://preview.redd.it/mountains-landscape-3d-effect-3840x2160-v0-oeb2qu4evlna1.jpg?auto=webp&s=1625a8eb476809990c97327cd6642fb121d8e783");
-    background-size: cover;
   }
 
   .blog-goBack {
@@ -18,13 +30,14 @@
     margin-top: 3rem;
     margin-left: 3rem;
     font-size: 0.8rem;
-    color: #a9a9a9;
+    color: #000000;
     font-weight: 500;
     margin-bottom: 2rem;
     display: block;
   }
   
   .registerTitle {
+    text-align: center;
     font-size: 50px;
   }
   
@@ -78,9 +91,20 @@
     color: var(--color-green);
     top: 50px;
     left: 10em;
+/* new config
+    top: 20px;
+    left: 6em; */
     font-size: 1rem;
-    
+    color: #000000;
     font-weight: 500;
     margin-bottom: 2rem;
     display: block;
   }
+
+  .regImage{
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    float: right;
+    /* causing error on home page, check why  */
+  }   

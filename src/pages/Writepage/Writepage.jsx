@@ -3,6 +3,7 @@ import Navbar from '../../components/Navbar/Navbar';
 import UploadWidget from '../../components/UploadWidget/UploadWidget';
 import './Writepage.css';
 import axios from 'axios'; 
+import { Button, WrapItem } from '@chakra-ui/react';
 
 
 const Writepage = () => {
@@ -66,6 +67,13 @@ const Writepage = () => {
             autoFocus={true}
             onChange={(e) => setTitle(e.target.value)}
           />
+          <WrapItem>
+            <Button 
+            colorScheme='teal'
+            type='submit'
+            >
+              Publish</Button>
+        </WrapItem>
         </div>
         <div className="writeFormGroup">
           <textarea
@@ -76,9 +84,9 @@ const Writepage = () => {
             onChange={(e) => setContent(e.target.value)}
           />
         </div>
-        <button className="writeSubmit" type="submit">
+        {/* <button className="writeSubmit" type="submit">
           Publish
-        </button>
+        </button> */}
       </form>
     </div>
     

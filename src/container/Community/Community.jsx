@@ -3,12 +3,18 @@ import './Community.css';
 import { FaImages, FaTags, FaUpload , FaComment} from 'react-icons/fa';
 import axios from 'axios';  
 import { useAuthContext } from '../../hooks/useAuthContext';
+// import 'emoji-mart/css/emoji-mart.css';
+import { Picker } from 'emoji-mart';
+import UploadWidget from '../../components/UploadWidget/UploadWidget';
+import { SimpleGrid } from '@chakra-ui/react';
+
  
 function Community() { 
   const [title, setTitle] = useState(""); 
   const [content, setContent] = useState(""); 
   const [postsData, setPostsData] = useState([]); 
   const [newPost, setNewPost] = useState({});  
+  const [photo, setPhoto] = useState(null); 
 
   const { user } = useAuthContext()
   // console.log("name", user.details.name); 
@@ -61,9 +67,10 @@ function Community() {
     e.preventDefault();
     
     setNewPost({
-      Title: 'post',
+      Title: title,
       Content: content,
-      Author: user._id
+      Author: user._id, 
+      Photo: photo
     })
 
     try {
@@ -101,7 +108,7 @@ function Community() {
         {/* <header> 
           <h1>Your Community</h1> 
         </header>  */}
-        <section id="search-bar"> 
+        {/* <section id="search-bar"> 
           <div className="search-container"> 
             <span role="img" aria-label="search-icon"> 
               🔍 
@@ -113,9 +120,19 @@ function Community() {
               // onChange={handleSearchChange} 
             /> 
           </div> 
-        </section> 
+        </section>  */}
+            <div className="posts-page-heading">
+      <h1>Latest Environmental Posts</h1>
+      <p>Stay updated with the latest news and articles about the environment.</p>
+    </div>
+
+        <div className="centerPosts">
         <section id="new-post" className="new-post-section"> 
-          <h2>Create Post</h2> 
+          <h2
+          style={{
+            padding: '10px', 
+          }}
+          >Create Post</h2> 
           <form onSubmit={handlePostSubmit}> 
             <div className="form-group"> 
             <div className="textarea-container">
@@ -142,60 +159,74 @@ function Community() {
                 ></textarea> 
               </div> 
             </div> 
-            <button type="button" className="btn btn-primary"> 
+            <UploadWidget 
+              img={photo}
+              setImg={setPhoto}
+            />
+            {/* <button 
+            type="button" 
+            className="btn btn-primary"> 
               <FaImages /> Gallery 
-            </button> 
-            <button type="button" className="btn btn-secondary"> 
+            </button>  */}
+            {/* <button type="button" className="btn btn-secondary"> 
               <FaTags /> Tag 
-            </button> 
-            <button type="submit" className="btn btn-success"> 
+            </button>  */}
+            {/* <button type="submit" className="btn btn-success"> 
               <FaUpload /> Publish 
-            </button> 
+            </button>  */}
           </form> 
         </section> 
+        </div>
+        
         <section id="posts"> 
+        <SimpleGrid p="10px" mt={10} mb={20} ml={25} mr={25} columns={3} spacing={6} >
         {postsData.map((post, index) => (
             <div key={index} className="post">
-              <strong>{post.Author.name}</strong> <br /><br />
+              <strong>{post.Title}</strong> <br /><br />
+              {post.Photo!=null && 
+              <img src={post.Photo} alt="Post Image" />
+            }
               {post.Content}<br /><br />
               <hr style={{ border: '0', height: '1px', background: '#444' }} />
 
               <div className="post-actions">
-                <button
+                {/* <button
                   onClick={() => handleLike(index)}
                   className={post.liked ? 'liked' : ''}
-                >
+                  >
                   <span className="heart-box">
-                    <span role="img" aria-label="heart">❤️</span>
+                  <span role="img" aria-label="heart">❤️</span>
                   </span>
                   {post.num_likes}
-                </button>
-                <button
+                </button> */}
+                {/* <button
                   onClick={() => handleLike(index)}
                   className={post.liked ? 'liked' : ''}
-                >
+                  >
                   <span className="thumb-box">
-                    <span role="img" aria-label="thumbs-up">👍</span>
+                  <span role="img" aria-label="thumbs-up">👍</span>
                   </span>
                   {post.num_likes}
-                </button>
-                <button
+                </button> */}
+                {/* <button
                   onClick={() => handleLike(index)}
                   className={post.liked ? 'liked' : ''}
-                >
+                  >
                   <span className="laugh-box">
-                    <span role="img" aria-label="laugh">😂</span>
+                  <span role="img" aria-label="laugh">😂</span>
                   </span>
                   {post.num_likes}
-                </button>
+                </button> */}
               </div>
             </div>
           ))}
+          </ SimpleGrid>
         </section> 
       </div> 
+      
 
       {/* Right side content - Top Contributors */}
-      <div className="right-content"> 
+      {/* <div className="right-content"> 
       <div className="content-box">
         <section className="top-contributors-section"> 
           <h2>Top Contributors</h2> 
@@ -203,7 +234,7 @@ function Community() {
           </div>
           <div className="content-box blank-box"></div>
     
-      </div> 
+      </div>  */}
     </div> 
   ); 
 } 

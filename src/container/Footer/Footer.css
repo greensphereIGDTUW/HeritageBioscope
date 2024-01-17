@@ -3,7 +3,6 @@
     width: 100%;
     position: relative;
     z-index: 1;
-
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -17,8 +16,19 @@
     color: var(--color-green);
     width: 100%;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
+
+    margin-top: 2rem;
+    padding: 0 1rem;
+}
+
+.app__footer-links_icons {
+    color: var(--color-green);
+    width: 100%;
+    display: flex;
+    justify-content: center;
 
     margin-top: 2rem;
     padding: 0 1rem;

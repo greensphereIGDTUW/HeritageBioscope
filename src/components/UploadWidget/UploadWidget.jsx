@@ -1,6 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react'
 import axios from 'axios'; 
 import { ThreeDots } from 'react-loader-spinner';
+import './UploadWidget.css'; 
+import { Button, WrapItem } from '@chakra-ui/react';
+import { FaUpload, FaImages } from 'react-icons/fa';
 
 const UploadWidget = ({img, setImg}) => {
   // const cloudinaryRef = useRef(); 
@@ -57,31 +60,43 @@ const UploadWidget = ({img, setImg}) => {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="img">Image:</label>
+        <div className ='ImageUplaod'>
+          {/* <div className='FileButton'> */}
+            {/* <label htmlFor="img">Image:</label> */}
+            {/* <FaImages /> Gallery  */}
+            <input
+              type="file"
+              accept="image/*"
+              id="img"
+              placeholder='Upload Cover Image'
+              // className="hide_file"
+              onChange={(e) => setImg((prev) => e.target.files[0])}
+              />
+          {/* </div> */}
           <br />
-          <input
-            type="file"
-            accept="image/*"
-            id="img"
-            onChange={(e) => setImg((prev) => e.target.files[0])}
-          />
+          <WrapItem>
+            <Button 
+            colorScheme='teal'
+            type='submit'> 
+              <FaUpload /> Publish Image
+            </Button>
+          </WrapItem>
         </div>
-        <br />
-        <button type="submit">Upload</button>
       </form>
-      {
-        loading && <ThreeDots
-          height="80"
-          width="80"
-          radius="9"
-          color="#4fa94d"
-          ariaLabel="three-dots-loading"
-          wrapperStyle={{}}
-          wrapperClassName=""
-          visible={true}
-        />
-      }
+      <div className="load">
+        {
+          loading && <ThreeDots
+            height="80"
+            width="80"
+            radius="9"
+            color="#4fa94d"
+            ariaLabel="three-dots-loading"
+            wrapperStyle={{}}
+            wrapperClassName=""
+            visible={true}
+          />
+        }
+      </div>
       {/* <button onClick={() => {widgetRef.current.open()}}><i className="writeIcon fas fa-plus"></i></button> */}
     </>
   ); 

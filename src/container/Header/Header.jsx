@@ -16,7 +16,8 @@ const Header = () => (
     </div>
 
     <div className="app__wrapper_img">
-      <img src= {images.welcome2} alt="header_img" />
+      {/* <AnimatedGIF src={images.birdPhtograph} alt='Girl clicking pic of bird' /> */}
+      <img src= {images.birdPhtograph} alt="header_img" />
     </div>
   </div>
 );

@@ -1,0 +1,38 @@
+.ImageUplaod{
+    display: flex;
+    padding: 20px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.load{
+    display: flex;
+    justify-content: center;
+}
+
+.FileButton{
+    padding:5px 10px;
+    background: #008080;    
+    border:1px solid #008080  ;
+    position:relative;
+    color:#fff;
+    border-radius:10%;
+    text-align:center;
+    float:left;
+    cursor:pointer; 
+    width: fit-content;
+}
+
+.hide_file {
+    position: absolute;
+    z-index: 1000;
+    opacity: 0;
+    cursor: pointer;
+    right: 0;
+    top: 0;
+    height: 100%;
+    font-size: 24px;
+    width: 100%;
+    
+}

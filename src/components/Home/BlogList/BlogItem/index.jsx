@@ -102,7 +102,9 @@ const BlogItem = ({
       <Text fontSize="sm" color="gray.500" paddingBottom={3}>
         {createdAt}
       </Text>
-      <Image src={Photo} alt="Photo" paddingBottom={3} height='200px' width='360px'></Image>
+      {
+        Photo!=null &&  <Image src={Photo} alt="Photo" paddingBottom={3} height='200px' width='360px'></Image>
+      }
       {/* <Text fontSize="md" paddingBottom={3} maxHeight="5em" overflow="hidden">
         {Content}
       </Text> */}

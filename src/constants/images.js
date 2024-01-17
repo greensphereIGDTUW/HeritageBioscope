@@ -30,8 +30,8 @@ import blog05 from '../assets/blog-5.jpg';
 import Aboutus01 from '../assets/AboutUs.jpeg';
 import navbarlogo from '../assets/logo_final-modified.png';
 import Aboutus02 from '../assets/green1.jpeg';
-
-
+import birdPhtograph from '../assets/photo_bird_nobg.gif'; 
+import butterfly from '../assets/butterfly_nobg.gif'; 
 
 
 export default {
@@ -67,4 +67,6 @@ export default {
   sign,
   quote,
   gericht,
+  birdPhtograph, 
+  butterfly
 };

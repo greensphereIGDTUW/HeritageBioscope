@@ -11,7 +11,7 @@ const Footer = () => (
     <div className="app__footer-links">
       <div className="app__footer-links_contact">
         <h1 className="app__footer-headtext">Contact Us</h1>
-        <p >Kashmere gate New Delhi, Delhi, India</p>
+        <p >IGDTUW, Kashmere Gate, New Delhi, Delhi, India</p>
         <p >123456789</p>
         
       </div>
@@ -24,10 +24,10 @@ const Footer = () => (
         <Link to= 'https://www.instagram.com/heritage_bioscope/'>
         <FiInstagram />
         </Link>
-        <Link to= 'projectecho.igdtuw@gmail.com'>
+        <Link to= 'mailto:projectecho.igdtuw@gmail.com'>
         <FiMail/>
         </Link>
-        <Link to= 'https://www.linkedin.com/in/greensphere-igdtuw-9b5552205/'>
+        <Link to= 'https://www.linkedin.com/in/heritagebioscope-projectecho-9b5552205/'>
         <FiLinkedin/>
         </Link>
           
