@@ -11,13 +11,13 @@ import { images } from '../../constants';
 
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = React.useState(false);
-  const { Logout } = useLogout()
-  const { user } = useAuthContext()
-  console.log(user); 
+  // const { Logout } = useLogout()
+  // const { user } = useAuthContext()
+  // console.log(user); 
   // console.log(user.email); 
 
   const handleClick = () => {
-    Logout()
+    // Logout()
   }
 
   return (
@@ -33,7 +33,7 @@ const Navbar = () => {
         <li className="p__opensans"><Link to= "/Community">Community</Link></li>
         
       </ul>
-      {!user && (
+      {/* {!user && (
       <div className="app__navbar-login">
         <a href="/Login" className="p__opensans"><Link to= "/Login">Log In</Link></a>
         <div />
@@ -45,7 +45,7 @@ const Navbar = () => {
             <span style = {{color: 'white'}}>{user.email}</span>
             <button className="p__opensans" onClick={handleClick}>Log out</button>
       </div>
-      )}
+      )} */}
       <div className="app__navbar-smallscreen">
         <GiHamburgerMenu color="#fff" fontSize={27} onClick={() => setToggleMenu(true)} />
         {toggleMenu && (

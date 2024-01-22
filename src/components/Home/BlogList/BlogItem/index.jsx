@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 
 import Chip from '../../../common/Chip';
 import './styles.css';
+import { formatDistanceToNow } from 'date-fns';
 
 const BlogItem = ({
   blog: {
@@ -13,7 +14,7 @@ const BlogItem = ({
     createdAt,
     _id,
     Photo,
-    authorAvatar,
+    Author,
 
   },
 }) => {
@@ -100,7 +101,7 @@ const BlogItem = ({
         {Title}
       </Heading>
       <Text fontSize="sm" color="gray.500" paddingBottom={3}>
-        {createdAt}
+        Posted by {Author} {formatDistanceToNow(new Date(createdAt), { addSuffix: true })}
       </Text>
       {
         Photo!=null &&  <Image src={Photo} alt="Photo" paddingBottom={3} height='200px' width='360px'></Image>

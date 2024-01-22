@@ -2,21 +2,24 @@ import React, { useState, useEffect } from 'react';
 import './Community.css'; 
 import { FaImages, FaTags, FaUpload , FaComment} from 'react-icons/fa';
 import axios from 'axios';  
-import { useAuthContext } from '../../hooks/useAuthContext';
+// import { useAuthContext } from '../../hooks/useAuthContext';
 // import 'emoji-mart/css/emoji-mart.css';
 import { Picker } from 'emoji-mart';
 import UploadWidget from '../../components/UploadWidget/UploadWidget';
 import { SimpleGrid } from '@chakra-ui/react';
+import { formatDistanceToNow } from 'date-fns';
+import { Button } from '@chakra-ui/react';
 
  
 function Community() { 
   const [title, setTitle] = useState(""); 
+  const [author, setAuthor] = useState(""); 
   const [content, setContent] = useState(""); 
   const [postsData, setPostsData] = useState([]); 
   const [newPost, setNewPost] = useState({});  
   const [photo, setPhoto] = useState(null); 
 
-  const { user } = useAuthContext()
+  // const { user } = useAuthContext()
   // console.log("name", user.details.name); 
   // console.log("id", user.detials._id); 
 
@@ -27,7 +30,7 @@ function Community() {
 
     const fetchPosts = async () => {
       try {
-        const response = await axios.get('https://heritagebioscope.onrender.com/api/posts'); 
+        const response = await axios.get('http://localhost:5500/api/posts'); 
         setPostsData(response.data); 
         console.log(postsData); 
       } catch (error) {
@@ -69,12 +72,12 @@ function Community() {
     setNewPost({
       Title: title,
       Content: content,
-      Author: user._id, 
+      Author: author, 
       Photo: photo
     })
 
     try {
-      const response = await axios.post('https://heritagebioscope.onrender.com/api/posts', newPost, {
+      const response = await axios.post('http://localhost:5500/api/posts', newPost, {
         headers: {
           'Content-Type': 'application/json'
         }
@@ -140,12 +143,25 @@ function Community() {
               type="text" 
               id="username" 
               className="form-control" 
-              placeholder="     Enter your name..." 
+              placeholder="Enter your name..." 
+              required 
+              onChange={e=>setAuthor(e.target.value)}
+              /> 
+            </div> 
+            </div>
+                        <div className="form-group"> 
+            <div className="textarea-container">
+              <input 
+              type="text" 
+              id="username" 
+              className="form-control" 
+              placeholder="Enter the title of the post..." 
               required 
               onChange={e=>setTitle(e.target.value)}
               /> 
             </div> 
             </div>
+
             <div className="form-group"> 
               <div className="textarea-container"> 
                 {/* <FaComment className="icon" />  */}
@@ -159,10 +175,19 @@ function Community() {
                 ></textarea> 
               </div> 
             </div> 
-            <UploadWidget 
-              img={photo}
-              setImg={setPhoto}
-            />
+            <div classname="funcButton">
+              <UploadWidget 
+                img={photo}
+                setImg={setPhoto}
+              />
+              <Button 
+              colorScheme='teal'
+              type='submit'> 
+                Submit Post
+              </Button>
+            </div>
+            
+
             {/* <button 
             type="button" 
             className="btn btn-primary"> 
@@ -174,6 +199,7 @@ function Community() {
             {/* <button type="submit" className="btn btn-success"> 
               <FaUpload /> Publish 
             </button>  */}
+            <button type="submit"> </button>
           </form> 
         </section> 
         </div>
@@ -182,14 +208,16 @@ function Community() {
         <SimpleGrid p="10px" mt={10} mb={20} ml={25} mr={25} columns={3} spacing={6} >
         {postsData.map((post, index) => (
             <div key={index} className="post">
-              <strong>{post.Title}</strong> <br /><br />
+              <strong>{post.Title}</strong> 
+              <div>~ By {post.Author}</div><br /><br />
               {post.Photo!=null && 
-              <img src={post.Photo} alt="Post Image" />
-            }
+              <div classname='postimg'><img src={post.Photo} alt="Post Image" /><br /><br /></div>
+            } 
               {post.Content}<br /><br />
               <hr style={{ border: '0', height: '1px', background: '#444' }} />
 
               <div className="post-actions">
+              <p>Posted {formatDistanceToNow(new Date(post.createdAt), { addSuffix: true })}</p>
                 {/* <button
                   onClick={() => handleLike(index)}
                   className={post.liked ? 'liked' : ''}

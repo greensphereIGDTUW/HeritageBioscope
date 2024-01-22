@@ -8,6 +8,7 @@ import './styles.css';
 import { Link } from 'react-router-dom';
 import { Navbar } from '../../components';
 import axios from 'axios';
+import { formatDistanceToNow } from 'date-fns';
 
 const Blog = () => {
   const { id } = useParams();
@@ -114,7 +115,7 @@ const Blog = () => {
     <div className='blog-wrap'>
       
       <header>
-        <p className='blog-date'>Published {blog.createdAt}</p>
+      <p>Posted {formatDistanceToNow(new Date(blog.createdAt), { addSuffix: true })}</p>
         <h1>{blog.Title}</h1>
         {/* <div className='blog-subCategory'>
           {blog.subCategory.map((category, i) => (

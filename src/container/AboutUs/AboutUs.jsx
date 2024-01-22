@@ -9,10 +9,12 @@ const AboutUs = () => {
       <div className="about-section-container">
       <div className="about-background-image-container">
         <img src={images.Aboutus01} width={500} height={300} border-radius= { 20 } alt="" />
-      </div>
-      <div className="about-section-image-container">
         <img src={images.Aboutus02} width={290} height={350} border-radius= { 20 } alt="" />
+
       </div>
+      {/* <div className="about-section-image-container">
+        <img src={images.Aboutus02} width={290} height={350} border-radius= { 20 } alt="" />
+      </div> */}
       <div className="about-section-text-container">
         <h2 className="primary-subheading">About Us</h2>
         <p className="primary-heading">

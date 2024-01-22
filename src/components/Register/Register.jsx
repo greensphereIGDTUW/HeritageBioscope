@@ -3,11 +3,13 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useRegister } from "../../hooks/useRegister";
 import { images } from "../../constants";
+import { Visibility, VisibilityOff } from '@mui/icons-material'; 
 
 export default function Register() {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [name, setname] = useState('')
+    const [visible, setVisible] = useState(false)
     const {Register, error, isLoading} = useRegister()
 
   const handleSubmit = async (e) => {
@@ -38,12 +40,20 @@ export default function Register() {
               />
 
               <label>Password</label>
-              <input className="registerInput" 
-              type="password" 
-              onChange={(e) => setPassword(e.target.value)} 
-              value={password}
-              placeholder="Enter your password..."
-              />
+              <div className="registerInput">
+                <input 
+                type={visible?"text":"password"}
+                onChange={(e) => setPassword(e.target.value)} 
+                value={password}
+                placeholder="Enter your password..."
+                />
+                <span onClick={() => {setVisible(!visible)}}>
+                  {
+                    visible ? <Visibility /> : <VisibilityOff />
+                  }
+                </span>
+                  
+              </div>
               <button className="registerButton" disabled={isLoading}>Register</button>
               {error && <div className="error">{error}</div>}
             </form>
@@ -62,5 +72,5 @@ export default function Register() {
     />
   </div>
     </div>
-    )
+    );
 }

@@ -19,10 +19,8 @@ export const useRegister = () => {
       body: JSON.stringify({ name, email, password })
     })
 
-    
-
     const json =  response.json()
-    console.log(json)
+    console.log(json, 'heelo')
 
     if (!response.ok) {
       setIsLoading(false)
@@ -33,7 +31,7 @@ export const useRegister = () => {
       localStorage.setItem('user', JSON.stringify(json))
 
       // update the auth context
-      dispatch({type: 'Login', payload: json})
+      dispatch({type: 'LOGIN', payload: json})
 
       // update loading state
       setIsLoading(false)

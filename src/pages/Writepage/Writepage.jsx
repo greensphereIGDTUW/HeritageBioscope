@@ -11,6 +11,7 @@ const Writepage = () => {
   const [title, setTitle] = useState(""); 
   const [content, setContent] = useState(""); 
   const [data, setData] = useState({}); 
+  const [author, setAuthor] = useState(""); 
   // const { user } = useContext(AuthContext)
 
   const handleSubmit = async (e) => {
@@ -20,11 +21,11 @@ const Writepage = () => {
       Title: title,
       Content: content,
       Photo: img, 
-      Author: '659181c3b22240b48892279c'
+      Author: author
     })
 
     try {
-      const response = await axios.post('https://heritagebioscope.onrender.com/api/blog', data, {
+      const response = await axios.post('http://localhost:5500/api/blog', data, {
         headers: {
           'Content-Type': 'application/json'
         }
@@ -55,6 +56,16 @@ const Writepage = () => {
       setImg={setImg}
       ></UploadWidget>
     <form className="writeForm" onSubmit={handleSubmit}>
+     <input 
+      className="writeInput"
+      placeholder="Add your Name"
+      type="text"
+      onChange={(e) => setAuthor(e.target.value)}
+      style={{
+        marginLeft: '150px'
+      }}
+      />
+
         <div className="writeFormGroup">
           {/* <label htmlFor="imageInput">
             <i className="writeIcon fas fa-plus"></i>

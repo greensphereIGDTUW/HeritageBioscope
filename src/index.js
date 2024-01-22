@@ -55,11 +55,11 @@ import Registerpage from './pages/Registerpage';
   ]);
   
   ReactDOM.createRoot(document.getElementById("root")).render(
-    <AuthContextProvider>
-      <React.StrictMode>
+    <React.StrictMode>
+      {/* <AuthContextProvider> */}
         <ChakraProvider>
-      <RouterProvider router={router} />
-      </ChakraProvider>
+          <RouterProvider router={router} />
+        </ChakraProvider>
+      {/* </AuthContextProvider> */}
     </React.StrictMode>
-    </AuthContextProvider>
   );
