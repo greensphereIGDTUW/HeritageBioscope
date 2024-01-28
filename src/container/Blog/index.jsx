@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
-import { Heading, Container, Text, SimpleGrid, Box, GridItem, Image ,VisuallyHidden, VisuallyHiddenInput  } from '@chakra-ui/react';
+import { Heading, Container, Text, SimpleGrid, Box, GridItem, Image ,VisuallyHidden, Divider, Center  } from '@chakra-ui/react';
 // import { blogList } from '../../constants/data';
 import Chip from '../../components/common/Chip';
 import EmptyList from '../../components/common/EmptyList';
@@ -115,8 +115,10 @@ const Blog = () => {
     <div className='blog-wrap'>
       
       <header>
+      <h1 className='blogTitle'>{blog.Title}</h1>
+      <h3>By - {blog.Author}</h3>
       <p>Posted {formatDistanceToNow(new Date(blog.createdAt), { addSuffix: true })}</p>
-        <h1>{blog.Title}</h1>
+      <Center><hr /></Center>
         {/* <div className='blog-subCategory'>
           {blog.subCategory.map((category, i) => (
             <div key={i}> */}
@@ -125,8 +127,13 @@ const Blog = () => {
           ))}
         </div> */}
       </header>
-        <img src={blog.Photo} alt='cover' /> 
+      <div className="desc">
+        {
+          blog.Photo &&  <img src={blog.Photo} alt='cover' /> 
+        }
       <p className='blog-desc'>{blog.Content}</p>
+      </div>
+
     </div>
     
   ) : (

@@ -1,321 +1,50 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-}
-.community-container {
-  margin-top: 3rem;
-  margin-bottom: 7rem;
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap');
+.app-container {
+  padding: 20px;
+  background: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/ab9830f4-5062-44e9-a5c1-d9974f59f10c/d6zq3mw-3307b36a-dab9-4ac8-ba09-d01fb10dfd84.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2FiOTgzMGY0LTUwNjItNDRlOS1hNWMxLWQ5OTc0ZjU5ZjEwY1wvZDZ6cTNtdy0zMzA3YjM2YS1kYWI5LTRhYzgtYmEwOS1kMDFmYjEwZGZkODQuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.C_8CnpB-AJu6QB0Zr5JtWhpYZ4GHNfN4wIe1hoXGRGo') center/cover fixed; 
+  /* Replace 'your-background-image.jpg' with your image URL */
+  position: relative;
 }
 
-#posts {
-  margin: 20px;
+.heading {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: teal; /* Set the text color to be visible on the background */
+  font-family: 'Merriweather', serif;
+  font-weight: 800;
 }
 
-.post {
-  border: 1px solid #ccc;
-  padding: 15px;
-  margin-bottom: 10px;
-  margin-left: 30px;
-  max-width: 500px;
-  max-height: fit-content;
-  width: 100%;
-  border-radius: 15px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-#new-post {
-  margin-top: 20rem;
-  margin: 20px;
-  margin-left: 50px;
-}
-.center-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0;
-  margin-left: 30px;
-}
-
-.new-post-section {
-  /* margin: 1000px; */
-  justify-content: center;
-  padding-bottom: 5rem;
-  max-width: 800px;
-  width: 90%; 
+.create-post-box {
+  max-width: 600px;
   margin: 20px auto;
   padding: 20px;
-  background-color: #f8f9fa;
+  background-color: rgba(248, 249, 250, 0.8); /* Background color with opacity */
   border: 1px solid #ced4da;
-  border-radius: 20px;
+  border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-
-.form-group {
-  margin-bottom: 15px;
-}
-
-label {
-  display: block;
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-.input,
-.textarea {
-  width: 100%;
-  padding: 8px;
-  box-sizing: border-box;
-  border: 1px solid #ced4da;
-  border-radius: 4px;
-}
-
-.btn-primary {
-  background-color: #1e7d1f;
-  color: #fff;
-  padding: 10px 15px;
-  margin: 2px;
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
-}
-
-.btn-primary:hover {
-  background-color: #66ba65;
-}
-
-.btn-secondary {
-  background-color: #ff97bb;
-  color: #fff;
-  margin: 2px;
-  margin-right: 540px;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
-}
-
-.btn-secondary:hover {
-  background-color: #ce2cb6;
-}
-
-.btn-success {
-  background-color: #125e05;
-  color: #fff;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
-}
-
-.btn-success:hover {
-  background-color: #66ba65;
-}
-
-
-.post-header {
-  border-bottom: 1px solid #ccc;
-  padding-bottom: 5px;
-  
-}
-
-.post-actions {
-  /* Your existing styles for .post-actions */
-} 
-
-.heart-box {
-  display: inline-block;
-  border: 1px solid #6c6c6c; /* Add a border */
-  padding: 5px; /* Adjust padding as needed */
-  border-radius: 5px; /* Optional: Add border-radius for rounded corners */
-  margin-right: 2px;
-  background-color: #ffaed0;
-}
-.thumb-box {
-  display: inline-block;
-  border: 1px solid #6c6c6c; /* Add a border */
-  padding: 5px; /* Adjust padding as needed */
-  border-radius: 5px; /* Optional: Add border-radius for rounded corners */
-  margin-right: 2px;
-  background-color: #faffb5;
-}
-.laugh-box {
-  display: inline-block;
-  border: 1px solid #6c6c6c; /* Add a border */
-  padding: 5px; /* Adjust padding as needed */
-  border-radius: 5px; /* Optional: Add border-radius for rounded corners */
-  margin-right: 2px;
-  background-color: #aef1ff;
-}
-#username {
-  width: 100%;
-  padding: 8px;
-  text-decoration: #333;
-  box-sizing: border-box;
-  border: 1px solid #ced4da;
-  background-color: #eae8e8;
-  border-radius: 30px; 
-}
-
-#content {
-  background-color: #e9e9e9;
-  width: 100%;
-  padding: 8px;
-  box-sizing: border-box;
-  border: 1px solid #ced4da;
-  border-radius: 30px; 
-}
-
-.textarea-container {
-  position: relative;
-}
-
-.icon {
-  position: absolute;
-  left: 5px; 
-  top: 45%;
-  transform: translateY(-50%);
-  color: #c7c7c7;
-}
-
-.form-control-content {
-  line-height: 3; 
-  height: 60px;
-  padding: 20px; 
-  padding-left: 2px;
-  box-sizing: border-box;
-}
-
-#search-bar {
-  margin: 18px;
-  margin-left: 13px;
-}
-
-.search-container {
-  display: flex;
-  align-items: center;
-  position: relative;
-  margin-left: 40px; 
-  width: 15%; 
-}
-
-/* Style the search icon */
-.search-container span {
-  position: absolute;
-  margin-left: 10px;
-}
-
-/* Style the search input with curved edges */
-#search-bar input {
-  padding: 10px;
-  padding-left: 40px; 
-  width: 100%; 
-  border-radius: 15px;
-  border: 1px solid #cccaca;
-}
-
-.post-actions button {
-  border: none; /* Remove the border */
-  background: none; /* Remove the background color */
-  cursor: pointer;
-}
-
-.post-actions button.liked {
-  color: red; /* You can change the color when liked if desired */
-}
-
-#top-contributors {
-  margin: 20px;
-  display: flex;
-  align-items: center;
-  position: relative;
-  margin-right: 30px; /* Adjusted to margin-right */
-  width: 15%;
-}
-
-/* Style the search input with curved edges */
-#top-contributors input {
-  padding: 10px;
-  width: 100%;
-  border-radius: 15px;
-  border: 1px solid #cccaca;
-}
-
-.top-contributors-section {
-  margin: 20px;
-}
-
-.top-contributors-list {
-  list-style: none;
-  padding: 0;
-}
-
-.top-contributors-list li {
+.create-post-box h2 {
+  font-size: 20px;
   margin-bottom: 10px;
 }
 
-.community-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-.left-content {
-  flex: 6.5; /* Takes up 70% of the width */
-}
-
-.right-content {
-  flex: 3.5; /* Takes up 30% of the width */
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-}
-.content-box {
-  margin-top: 30px;
-  margin-right: 20px;
-  margin-bottom: 0px; /* Adjust as needed */
-  padding: 0px;
-  background-color: #fff9f9; /* Example background color */
+.post {
+  width: 100%; /* Set the width to 100% */
+  max-width: 600px; /* Set the max-width to match create-post-box */
+  padding: 15px;
   border: 1px solid #ced4da;
-  border-radius: 20px;
-  box-shadow: 0 2px 4px rgba(98, 0, 0, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.9); /* Background color with opacity */
 }
 
-.blank-box {
-  flex: 1; /* Takes up remaining space vertically */
+/* Add more styling for post details as needed */
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+  .create-post-box {
+    max-width: 90%;
+  }
 }
-
-/* .centerPosts{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-} */
-
-/* PostsPageHeading.css */
-
-.posts-page-heading {
-  text-align: center;
-  margin: 300px 0 0; /* Add margin-top to push it down */
-  z-index: -1000;
-}
-
-.posts-page-heading h1 {
-  font-size: 2.5rem;
-  color: #008080; /* Set your desired color */
-}
-
-.posts-page-heading p {
-  font-size: 1.2rem;
-  color: #555;
-  margin-top: 10px;
-}
-
-.postimg{
-  border-radius: 5%;
-  
-}
-

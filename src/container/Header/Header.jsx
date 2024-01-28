@@ -12,7 +12,7 @@ const Header = () => (
       <p className="p__opensans" style={{ margin: '1rem 0' }}>
       An innovative project at the intersection of cultural richness and natural beauty in the heart of Delhi. Guided by the visionary tagline <strong>Seeing Heritage through the Eyes of Nature</strong> our initiative seeks to redefine the traditional concept of heritage by seamlessly blending historical and natural treasures. 
       </p>
-      <button type="button" className="custom__button"><Link to= "/Register">Get Started</Link></button>
+      <button type="button" className="custom__button"><Link to= "/">Get Started</Link></button>
     </div>
 
     <div className="app__wrapper_img">

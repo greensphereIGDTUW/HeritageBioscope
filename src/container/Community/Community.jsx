@@ -8,7 +8,10 @@ import { Picker } from 'emoji-mart';
 import UploadWidget from '../../components/UploadWidget/UploadWidget';
 import { SimpleGrid } from '@chakra-ui/react';
 import { formatDistanceToNow } from 'date-fns';
-import { Button } from '@chakra-ui/react';
+import { Button, Box, Input, Textarea, Flex } from '@chakra-ui/react';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
  
 function Community() { 
@@ -18,53 +21,20 @@ function Community() {
   const [postsData, setPostsData] = useState([]); 
   const [newPost, setNewPost] = useState({});  
   const [photo, setPhoto] = useState(null); 
+  const [loading, setLoading] = useState(false); 
 
-  // const { user } = useAuthContext()
-  // console.log("name", user.details.name); 
-  // console.log("id", user.detials._id); 
-
-
-  // const [searchTerm, setSearchTerm] = useState(''); 
-  // const [newPostContent, setNewPostContent] = useState(''); 
-  // const [username, setUsername] = useState(''); // Added username state
-
-    const fetchPosts = async () => {
-      try {
-        const response = await axios.get('http://localhost:5500/api/posts'); 
-        setPostsData(response.data); 
-        console.log(postsData); 
-      } catch (error) {
-        console.log("Error:", error.message); 
-      }
+  const fetchPosts = async () => {
+    try {
+      const response = await axios.get('https://heritagebioscope.onrender.com/api/posts');
+      setPostsData(response.data);
+    } catch (error) {
+      console.log('Error:', error.message);
     }
-
-  useEffect(() => { 
-    // Display existing posts 
-    fetchPosts(); 
-  }, []); // Run only once on component mount 
-  // useEffect(() => {
-  //   console.log('Updated Posts Data:', postsData);
-  // }, [postsData]);
-
-  const handleLike = (index) => {
-    // Handle liking a post
-    // For simplicity, let's toggle the like status
-    const updatedPosts = [...postsData];
-    updatedPosts[index].liked = !updatedPosts[index].liked;
-    updatedPosts[index].likes = updatedPosts[index].liked
-      ? updatedPosts[index].likes + 1
-      : updatedPosts[index].likes - 1;
-    setPostsData(updatedPosts);
   };
 
-  // Handle new post submission 
-  // const handlePostSubmit = (event) => {
-  //   event.preventDefault();
-  //   const username = event.target.username.value;
-  //   const content = event.target.content.value;
-  //   setPostsData([...postsData, { username, content, liked: false, likes: 0 }]);
-  //   event.target.reset();
-  // };
+  useEffect(() => {
+    fetchPosts();
+  }, []);
 
   const handlePostSubmit = async (e) => {
     e.preventDefault();
@@ -77,138 +47,100 @@ function Community() {
     })
 
     try {
-      const response = await axios.post('http://localhost:5500/api/posts', newPost, {
+      const response = await axios.post('https://heritagebioscope.onrender.com/api/posts', newPost, {
         headers: {
           'Content-Type': 'application/json'
         }
       });
   
       console.log(response.data);
-
+  
+      toast.success('Post uploaded successfully!', {
+        position: 'top-right',
+        autoClose: 3000, // Time in milliseconds, set to 0 to keep the toast open
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });  
       await fetchPosts();
+
+      setAuthor("");
+      setTitle("");
+      setContent("");
+      setPhoto(null);
+
 
     } catch (error) {
       console.error('Error:', error.message);
+
+      toast.error('Error uploading post. Please try again.', {
+        position: 'top-right',
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+
     }
     
-    e.target.reset();
     console.log('Clicked');
   };
 
-  // // Handle search term change 
-  // const handleSearchChange = (event) => { 
-  //   setSearchTerm(event.target.value); 
-  // }; 
+  return (
+    <div className="app-container">
+      <h1 className="heading">Latest Posts on Heritage</h1>
 
-  // // Handle new post content change 
-  // const handleNewPostContentChange = (event) => { 
-  //   setNewPostContent(event.target.value); 
-  // }; 
-
-  return ( 
-    <div className="community-container"> 
-      <div className="left-content"> 
-        {/* <header> 
-          <h1>Your Community</h1> 
-        </header>  */}
-        {/* <section id="search-bar"> 
-          <div className="search-container"> 
-            <span role="img" aria-label="search-icon"> 
-              🔍 
-            </span> 
-            <input 
-              type="text" 
-              placeholder="Type to search..." 
-              // value={searchTerm} 
-              // onChange={handleSearchChange} 
-            /> 
-          </div> 
-        </section>  */}
-            <div className="posts-page-heading">
-      <h1>Latest Environmental Posts</h1>
-      <p>Stay updated with the latest news and articles about the environment.</p>
-    </div>
-
-        <div className="centerPosts">
-        <section id="new-post" className="new-post-section"> 
-          <h2
-          style={{
-            padding: '10px', 
+      <Box className="create-post-box">
+        <h2>Create Post</h2>
+        <Input
+          placeholder="Your Name"
+          value={author}
+          onChange={(e) => setAuthor(e.target.value)}
+          style = {{
+            margin: '5px',
+            borderRadius:'20px'
           }}
-          >Create Post</h2> 
-          <form onSubmit={handlePostSubmit}> 
-            <div className="form-group"> 
-            <div className="textarea-container">
-              <input 
-              type="text" 
-              id="username" 
-              className="form-control" 
-              placeholder="Enter your name..." 
-              required 
-              onChange={e=>setAuthor(e.target.value)}
-              /> 
-            </div> 
-            </div>
-                        <div className="form-group"> 
-            <div className="textarea-container">
-              <input 
-              type="text" 
-              id="username" 
-              className="form-control" 
-              placeholder="Enter the title of the post..." 
-              required 
-              onChange={e=>setTitle(e.target.value)}
-              /> 
-            </div> 
-            </div>
+        />
+        <Input
+          placeholder="Title of Post"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+          style = {{
+            margin: '5px',
+            borderRadius:'20px'
+          }}
+        />
+        <Textarea
+          placeholder="What biotic change have you made for our environment today?"
+          value={content}
+          onChange={(e) => setContent(e.target.value)}
+          style = {{
+            margin: '5px',
+            borderRadius:'20px'
+          }}
+        />
+        <UploadWidget
+        img={photo}
+        setImg={setPhoto}
+        ></UploadWidget>
+        <Button colorScheme="teal" onClick={handlePostSubmit}>
+          Submit Post
+        </Button>
+      </Box>
 
-            <div className="form-group"> 
-              <div className="textarea-container"> 
-                {/* <FaComment className="icon" />  */}
-                <textarea 
-                id="content" 
-                rows="4" 
-                placeholder="  What biotic change have you made for our environment today?" 
-                className="form-control-content" 
-                required
-                onChange={e => setContent(e.target.value)}
-                ></textarea> 
-              </div> 
-            </div> 
-            <div classname="funcButton">
-              <UploadWidget 
-                img={photo}
-                setImg={setPhoto}
-              />
-              <Button 
-              colorScheme='teal'
-              type='submit'> 
-                Submit Post
-              </Button>
-            </div>
-            
-
-            {/* <button 
-            type="button" 
-            className="btn btn-primary"> 
-              <FaImages /> Gallery 
-            </button>  */}
-            {/* <button type="button" className="btn btn-secondary"> 
-              <FaTags /> Tag 
-            </button>  */}
-            {/* <button type="submit" className="btn btn-success"> 
-              <FaUpload /> Publish 
-            </button>  */}
-            <button type="submit"> </button>
-          </form> 
-        </section> 
-        </div>
-        
-        <section id="posts"> 
-        <SimpleGrid p="10px" mt={10} mb={20} ml={25} mr={25} columns={3} spacing={6} >
-        {postsData.map((post, index) => (
-            <div key={index} className="post">
-              <strong>{post.Title}</strong> 
+      <Flex 
+      direction={'column-reverse'}
+      gap={5}
+      alignItems={'center'}
+      >
+      {postsData.map((post, index) => (
+          <Box key={index} className="post">
+              <div key={index} className="post">
+                <strong>{post.Title}</strong> 
               <div>~ By {post.Author}</div><br /><br />
               {post.Photo!=null && 
               <div classname='postimg'><img src={post.Photo} alt="Post Image" /><br /><br /></div>
@@ -216,54 +148,26 @@ function Community() {
               {post.Content}<br /><br />
               <hr style={{ border: '0', height: '1px', background: '#444' }} />
 
-              <div className="post-actions">
-              <p>Posted {formatDistanceToNow(new Date(post.createdAt), { addSuffix: true })}</p>
-                {/* <button
-                  onClick={() => handleLike(index)}
-                  className={post.liked ? 'liked' : ''}
-                  >
-                  <span className="heart-box">
-                  <span role="img" aria-label="heart">❤️</span>
-                  </span>
-                  {post.num_likes}
-                </button> */}
-                {/* <button
-                  onClick={() => handleLike(index)}
-                  className={post.liked ? 'liked' : ''}
-                  >
-                  <span className="thumb-box">
-                  <span role="img" aria-label="thumbs-up">👍</span>
-                  </span>
-                  {post.num_likes}
-                </button> */}
-                {/* <button
-                  onClick={() => handleLike(index)}
-                  className={post.liked ? 'liked' : ''}
-                  >
-                  <span className="laugh-box">
-                  <span role="img" aria-label="laugh">😂</span>
-                  </span>
-                  {post.num_likes}
-                </button> */}
-              </div>
             </div>
-          ))}
-          </ SimpleGrid>
-        </section> 
-      </div> 
-      
+          </Box>
+        ))}
 
-      {/* Right side content - Top Contributors */}
-      {/* <div className="right-content"> 
-      <div className="content-box">
-        <section className="top-contributors-section"> 
-          <h2>Top Contributors</h2> 
-          </section>
-          </div>
-          <div className="content-box blank-box"></div>
-    
-      </div>  */}
-    </div> 
+      </Flex>
+      <SimpleGrid columns={{ sm: 1, md: 2, lg: 3 }} spacing={6} className="posts-grid">
+      </SimpleGrid>
+
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
+    </div>
   ); 
 } 
  

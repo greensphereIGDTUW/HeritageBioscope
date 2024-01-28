@@ -4,6 +4,8 @@ import UploadWidget from '../../components/UploadWidget/UploadWidget';
 import './Writepage.css';
 import axios from 'axios'; 
 import { Button, WrapItem } from '@chakra-ui/react';
+import { toast, ToastContainer } from 'react-toastify';
+import { Link } from 'react-router-dom';
 
 
 const Writepage = () => {
@@ -25,12 +27,33 @@ const Writepage = () => {
     })
 
     try {
-      const response = await axios.post('http://localhost:5500/api/blog', data, {
+      const response = await axios.post('https://heritagebioscope.onrender.com/api/blog', data, {
         headers: {
           'Content-Type': 'application/json'
         }
       });
+
+      setAuthor("");
+      setTitle("");
+      setContent("");
+      setImg(null);
   
+      toast.success(
+        <div>
+          <h2>Blog uploaded successfully!</h2>
+        <Link to={`http://localhost:3000/Blogdetailpage/${response.data._id}`}>View Blog</Link>
+      </div>,
+
+      {
+        position: 'top-right',
+        autoClose: 3000, // Time in milliseconds, set to 0 to keep the toast open
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });  
+
       console.log(response.data);
     } catch (error) {
       console.error('Error:', error.message);
@@ -100,6 +123,17 @@ const Writepage = () => {
         </button> */}
       </form>
     </div>
+    <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     
     </div>
     

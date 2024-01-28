@@ -32,6 +32,15 @@ import navbarlogo from '../assets/logo_final-modified.png';
 import Aboutus02 from '../assets/green1.jpeg';
 import birdPhtograph from '../assets/photo_bird_nobg.gif'; 
 import butterfly from '../assets/butterfly_nobg.gif'; 
+import hill1 from '../assets/hill1.png'; 
+import hill2 from '../assets/hill2.png'; 
+import hill3 from '../assets/hill3.png'; 
+import hill4 from '../assets/hill4.png'; 
+import hill5 from '../assets/hill5.png'; 
+import leaf from '../assets/leaf.png'; 
+import plant from '../assets/plant.png'; 
+import tree from '../assets/tree.png'; 
+
 
 
 export default {
@@ -68,5 +77,13 @@ export default {
   quote,
   gericht,
   birdPhtograph, 
-  butterfly
+  butterfly, 
+  hill1, 
+  hill2, 
+  hill3, 
+  hill4, 
+  hill5, 
+  tree, 
+  plant, 
+  leaf
 };

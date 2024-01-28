@@ -1,18 +1,22 @@
-import React from 'react';
+import React, { useRef } from 'react';
 
-import { AboutUs,  Footer, Home, Header, Community } from './container';
+import { AboutUs,  Footer, Home, Header, Community} from './container';
 import { Navbar } from './components';
 import './App.css';
+import ParallaxComponent from './container/ParallaxHeader/ParallaxHeader';
 
-const App = () => (
-  <div>
+const App = () => {
+  return(
+    <div>
     <Navbar />
-    <Header />
-    <AboutUs /> 
+    {/* <Header /> */}
+    <ParallaxComponent />
+    {/* <AboutUs /> 
     <Home/>
-    <Community/>
+    <Community/> */}
     <Footer />
   </div>
-);
+  ); 
+  };
 
 export default App;

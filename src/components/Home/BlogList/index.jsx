@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Heading, Container, Text, SimpleGrid, Box, GridItem, Image ,VisuallyHidden, VisuallyHiddenInput  } from '@chakra-ui/react';
+import { Heading, Container, Text, SimpleGrid, Box, GridItem, Image ,VisuallyHidden, VisuallyHiddenInput, Flex  } from '@chakra-ui/react';
 import BlogItem from './BlogItem';
 import './styles.css';
 import axios from 'axios'; 
@@ -23,21 +23,31 @@ const BlogList = ({ blogs }) => {
   }, []); // Run only once on component mount 
 
   return (
-    <SimpleGrid p="10px" mt={10} mb={20} ml={25} mr={25} columns={3} spacing={6} >
-      
-      {blogsData.map((blog, index) => (
+    <div className="bg">
+          <Flex
+    flexWrap={'wrap'}
+    >
+            {blogsData.map((blog, index) => (
             <BlogItem key = {index} blog={blog} />
           ))}
+      
 
+    </Flex>
+
+
+    </div>
+    // <SimpleGrid p="10px" mt={10} mb={20} ml={25} mr={25} columns={3} spacing={6} >
       
+    //   {blogsData.map((blog, index) => (
+    //         <BlogItem key = {index} blog={blog} />
+    //       ))}
       
-      
-      {/* <Container paddingTop={20} mt={5}>
+      /* <Container paddingTop={20} mt={5}>
       {blogsData.map((blog, index) => (
             <BlogItem key = {index} blog={blog} />
           ))}
-      </Container> */}
-    </SimpleGrid>
+      </Container> */
+    // </SimpleGrid>
     
     // <div className='blogList-wrap'>
     //   {blogsData.map((blog, index) => (

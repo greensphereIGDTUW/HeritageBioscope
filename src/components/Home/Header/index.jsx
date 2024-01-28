@@ -5,12 +5,11 @@ const Header = () => (
   <header className='home-header'>
     <h2>A lot has been happening around</h2>
     <h1>
-      <span>“</span> Blog <span>”</span>
+      Blog
     </h1>
-    <p>
-      awesome place to make oneself <br /> productive and entertained through
-      daily updates.
-    </p>
+    <h3>
+      Awesome place to make oneself <br /> productive and entertained through daily updates.
+    </h3>
   </header>
 );
 

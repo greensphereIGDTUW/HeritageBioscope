@@ -75,7 +75,7 @@ const BlogItem = ({
   <Container
   as="section"
   paddingTop={10}
-  maxWidth="4xl"
+  maxW="500px"
   py="20px"
   textAlign="center"
 >
@@ -104,12 +104,13 @@ const BlogItem = ({
         Posted by {Author} {formatDistanceToNow(new Date(createdAt), { addSuffix: true })}
       </Text>
       {
-        Photo!=null &&  <Image src={Photo} alt="Photo" paddingBottom={3} height='200px' width='360px'></Image>
+        Photo &&  <Image src={Photo} alt="Photo" paddingBottom={3} height='200px' width='360px'></Image>
       }
       {/* <Text fontSize="md" paddingBottom={3} maxHeight="5em" overflow="hidden">
         {Content}
       </Text> */}
     </Container>
+    <Spacer />
     <Button
       size="md"
       height="48px"

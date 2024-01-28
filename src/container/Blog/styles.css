@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@700&display=swap');
+
+hr{
+  width: 50%;
+  border: 1px solid black;
+}
+
 .blog-goBack {
   text-decoration: none;
   margin-top: 5rem;
@@ -8,34 +15,40 @@
   margin-bottom: 2rem;
   display: block;
 }
-.blog-wrap {
-  padding-left: 2rem;
-  padding-right: 2rem;
-  margin: 5rem auto;
-  margin-bottom: 10rem;
-}
 
+.blog-wrap {
+  padding: 2rem;
+  margin: 2rem auto;
+  margin-bottom: 10rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 900px;
+  border: 8px ridge gray; 
+}
 
 .blog-wrap header {
   text-align: center;
   padding-left: 6.5rem;
   padding-right: 6.5rem;
-  
 }
+
+.blogTitle{
+  font-family: var(--font-alt);
+  color: var(--color-green);
+  font-size: 30px;
+  font-weight: bold;
+  font-family: 'Mukta', sans-serif;
+  margin-bottom: 5px;
+}
+
 .blog-wrap header p {
   
-  margin-bottom: 1rem;
+  margin: 1.6rem;
   line-height: 5px;
   font-size: 1rem;
 }
-blog-wrap header h1 {
-  font-family: var(--font-alt);
-  color: var(--color-green);
-  
-  font-size: 1.1rem;
-  font-weight: normal;
-  line-height: 0.9rem;
-}
+
 
 .blog-date {
   font-size: 0.8rem;
@@ -46,12 +59,19 @@ blog-wrap header h1 {
 .blog-wrap img {
   margin-left: 5rem;
   margin-right: 5rem;
-  max-width: 900px;
+  max-width: 100%;
   max-height: 400px;
   width: 100%;
   margin-top: 3rem;
   border-radius: 20px;
   object-fit: cover;
+}
+
+.desc{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+ 
 }
 
 .blog-subCategory {
@@ -62,11 +82,12 @@ blog-wrap header h1 {
   margin: 1rem;
 }
 .blog-desc {
-  line-height: 1.7rem;
-  font-size: 13px;
-  margin-left: 4rem;
-  margin-right: 4rem;
-  /* max-width: 1100px; */
-  padding: 1rem;
+  line-height: 2 rem;
+  font-size: 24px;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  max-width: 100%;
   margin-top: 1.5rem;
+  text-justify: inter-word;
+  text-align: justify;
 }

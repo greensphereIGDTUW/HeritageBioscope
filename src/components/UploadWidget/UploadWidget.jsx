@@ -30,7 +30,7 @@ const UploadWidget = ({img, setImg}) => {
     try {
       let cloudName = process.env.REACT_APP_CLOUDINARY_CLOUD_NAME;
       let resourceType = 'image';
-      let api = `https://api.cloudinary.com/v1_1/${cloudName}/${resourceType}/upload`;
+      let api = `https://api.cloudinary.com/v1_1/dmg4zjmrp/image/upload`;
 
       const res = await axios.post(api, data);
       const { secure_url } = res.data;
