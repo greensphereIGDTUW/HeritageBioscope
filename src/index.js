@@ -9,6 +9,7 @@ import Blog from './container/Blog/index';
 import Writepage from './pages/Writepage/Writepage'
 import Loginpage from './pages/Loginpage';
 import { AuthContextProvider } from './context/AuthContext';
+import InstaPosts from './pages/InstaPosts'; 
 
 import './index.css';
 import App from './App';
@@ -17,6 +18,7 @@ import {
     RouterProvider,
   } from "react-router-dom";
 import Registerpage from './pages/Registerpage';
+import News from './pages/News';
 
 
   const router = createBrowserRouter([
@@ -52,6 +54,14 @@ import Registerpage from './pages/Registerpage';
         path: "Register",
         element: <Registerpage />,
       },
+      {
+        path: "News", 
+        element: <News />
+      }, 
+      {
+        path: "Insta", 
+        element: <InstaPosts />
+      }
   ]);
   
   ReactDOM.createRoot(document.getElementById("root")).render(

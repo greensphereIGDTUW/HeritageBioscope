@@ -1,51 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
-* {
+.parallaxContainer {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-}
-
-body {
     background: #f9f9f9;
     min-height: 100vh;
     overflow-x: hidden;
-}
-
-header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 30px 100px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    z-index: 100;
-}
-
-
-.logo {
-    font-size: 2em;
-    color: #359381;
-    pointer-events: none;
-    margin-right: 270px;
-}
-
-.navigation a {
-    text-decoration: none;
-    color: #359381;
-    padding: 6px 15px;
-    border-radius: 20px;
-    margin: 0 10px;
-    font-weight: 600;
-}
-
-.navigation a:hover {
-    background: #359381;
-    color: #fff;
-
 }
 
 .parallax {
@@ -67,25 +29,45 @@ header {
     top: 0;
     left: 0;
     width: 100%;
+    height: auto; /* Ensure images maintain aspect ratio */
     pointer-events: none;
 }
 
 .sec {
     position: relative;
     background: #003329;
-    padding: 100px;
+    padding: 5% 10%; /* Adjust padding as needed for smaller screens */
     color: white;
 }
 
-.sec h2 {
-    font-size: 3em;
+.sec h4 {
+    font-size: 2rem;
     color: #fff;
     margin-bottom: 10px;
 }
 
-.sec p {
-    font-size: 1em;
-    color: #fff;
-    font-weight: 300;
+/* Media queries for responsiveness */
+@media only screen and (max-width: 768px) {
+    .parallaxContainer {
+        font-size: 14px; /* Adjust font size for smaller screens */
+    }
+
+    .parallax #text {
+        font-size: 3em; /* Adjust font size for smaller screens */
+    }
+
+    .sec {
+        padding: 5% 5%; /* Adjust padding for smaller screens */
+    }
 }
 
+/* Media query for phones */
+@media only screen and (max-width: 480px) {
+    .parallax #text {
+        font-size: 2em; /* Adjust font size for phones */
+    }
+
+    .sec {
+        padding: 5% 3%; /* Adjust padding for phones */
+    }
+}

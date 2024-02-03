@@ -78,7 +78,7 @@ const BlogItem = ({
   maxW="500px"
   py="20px"
   textAlign="center"
->
+  >
   <Flex>
 
 

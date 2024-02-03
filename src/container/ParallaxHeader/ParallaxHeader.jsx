@@ -23,7 +23,7 @@ const ParallaxComponent = () => {
   }, []);
 
   return (
-    <div>
+    <div className='parallaxContainer'>
       <section className="parallax">
         <img src={images.hill1} alt="hill1" id="hill1" />
         <img src={images.hill2} alt="hill2" id="hill2" />

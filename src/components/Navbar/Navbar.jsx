@@ -23,14 +23,16 @@ const Navbar = () => {
   return (
     <nav className="app__navbar">
       <div className="app__navbar-logo">
-      <img src= {images.navbarlogo} width={69} height={69} border-radius= { 90 } alt="" className="logo__image" />
-      <h1 className= "app__navbar-logo-bigg">Heritage Bioscope</h1>
+      <img className = "nav_logo" src= {images.navbarlogo} width={80} height={80} border-radius= { 90 }/>
+      <h1 className= "app__navbar-logo-bigg">Heritage </h1>
+      <h1 className= "app__navbar-logo-bigg">Bioscope</h1>
       </div>
       <ul className="app__navbar-links">
         <li className="p__opensans"><Link to= "/">Home</Link></li>
         <li className="p__opensans"><Link to= "/AboutUS">About Us</Link></li>
         <li className="p__opensans"><Link to= "/Blog">Blog </Link></li>
         <li className="p__opensans"><Link to= "/Community">Community</Link></li>
+        <li className="p__opensans"><Link to= "/News">News</Link></li>
         
       </ul>
       {/* {!user && (

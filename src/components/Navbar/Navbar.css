@@ -12,27 +12,26 @@
     padding-top: 1.5rem;
     margin-bottom: 0.001rem;
     display: flex;
-    justify-content: flex-start;
     align-items: center;
 }
 
 .app__navbar-logo-bigg {
-    width: 180px;
     margin-bottom: 0.01rem;
     color: var(--color-white);
-    padding-left: 4rem;
     padding-bottom: 0px;
-    font-size: 170%;
+    font-size: 2rem;
     font-family: var(--font-base);
-    
+}
+
+.nav_logo{
+    padding-right: 20px;
 }
 
 .app__navbar-links {
     flex: 1;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
-
     list-style: none;
 }
 
