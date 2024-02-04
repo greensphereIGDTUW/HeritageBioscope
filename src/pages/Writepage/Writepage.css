@@ -18,7 +18,7 @@
   }
   
   .writeFormGroup {
-    margin-left: 150px;
+    margin-left: 6.25rem;
     display: flex;
     align-items: center;
   }
@@ -74,3 +74,35 @@
     align-items: center;
   }
   
+  .writeName{
+    margin: '1000px'; 
+  }
+
+  @media (max-width: 768px){
+    .writeInput {
+      font-size: 25px;
+      border: none;
+      padding: 20px;
+      width: 60vw;
+    }  
+    .writeFormGroup {
+      margin-left: 5.5rem;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  @media (max-width: 576px){
+    .writeInput {
+      font-size: 15px;
+      border: none;
+      /* padding: 20px; */
+      width: 100vw;
+    }  
+    .writeFormGroup {
+      /* margin-left: 3rem; */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }  
+  }

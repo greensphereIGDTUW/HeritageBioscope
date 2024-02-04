@@ -23,6 +23,10 @@
   border: 1px solid #ced4da;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .create-post-box h2 {
@@ -40,11 +44,23 @@
   background-color: rgba(255, 255, 255, 0.9); /* Background color with opacity */
 }
 
+input[type="file"]::file-selector-button {
+  background-color: teal;  
+  color: white;
+  padding: 0.5rem;
+  border-radius: 10px;
+  font-weight: 400;
+}
+
 /* Add more styling for post details as needed */
 
 /* Media Queries for responsiveness */
 @media (max-width: 768px) {
   .create-post-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     max-width: 90%;
   }
 }

@@ -31,9 +31,7 @@ const ParallaxComponent = () => {
         <img src={images.hill4} alt="hill4" id="hill4" />
         <img src={images.hill5} alt="hill5" id="hill5" />
         <img src={images.tree} alt="tree" id="tree" />
-        <h2 id="text" style = {{
-          color: 'white'
-        }}>HeritageBioscope</h2>
+        <h2 id="text">HeritageBioscope</h2>
         <img src={images.leaf} alt="leaf" id="leaf" />
         <img src={images.plant} alt="plant" id="plant" />
       </section>

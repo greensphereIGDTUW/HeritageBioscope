@@ -20,8 +20,9 @@
 
 #text {
     position: absolute;
-    font-size: 5em;
+    font-size: 4em;
     color: #fff;
+    font-weight: 500;
 }
 
 .parallax img {
@@ -62,12 +63,15 @@
 }
 
 /* Media query for phones */
-@media only screen and (max-width: 480px) {
-    .parallax #text {
+@media (max-width: 480px) {
+    #text {
+        font-weight: normal;
         font-size: 2em; /* Adjust font size for phones */
+        color: teal; 
     }
 
     .sec {
         padding: 5% 3%; /* Adjust padding for phones */
     }
 }
+

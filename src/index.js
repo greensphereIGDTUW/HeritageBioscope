@@ -43,7 +43,7 @@ import News from './pages/News';
         element: <Communitypage />,
       },
       {
-        path: "AboutUS",
+        path: "AboutUs",
         element: <AboutUspage />,
       },
       {

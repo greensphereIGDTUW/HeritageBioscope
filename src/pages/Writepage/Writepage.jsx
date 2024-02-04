@@ -19,6 +19,7 @@ const Writepage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     
+  
     setData({
       Title: title,
       Content: content,
@@ -59,7 +60,6 @@ const Writepage = () => {
       console.error('Error:', error.message);
     }
   
-    console.log('Clicked');
   };
 
 
@@ -85,7 +85,7 @@ const Writepage = () => {
       type="text"
       onChange={(e) => setAuthor(e.target.value)}
       style={{
-        marginLeft: '150px'
+        marginLeft: '6.25rem',      
       }}
       />
 
@@ -94,6 +94,7 @@ const Writepage = () => {
             <i className="writeIcon fas fa-plus"></i>
           </label>
           <input type = "file" id = "imageInput" type="file" style={{ display: "none" }} /> */}
+          
           <input
             className="writeInput"
             placeholder="Add your Title"
@@ -101,12 +102,15 @@ const Writepage = () => {
             autoFocus={true}
             onChange={(e) => setTitle(e.target.value)}
           />
-          <WrapItem>
-            <Button 
+          <div>
+          <Button 
             colorScheme='teal'
             type='submit'
             >
               Publish</Button>
+          </div>
+          <WrapItem>
+
         </WrapItem>
         </div>
         <div className="writeFormGroup">

@@ -63,24 +63,30 @@ const UploadWidget = ({img, setImg}) => {
         <div className ='ImageUplaod'>
           {/* <div className='FileButton'> */}
             {/* <label htmlFor="img">Image:</label> */}
-            {/* <FaImages /> Gallery  */}
+              {/* <FaImages /> */}
+
+                  <label id="file-input-label" for="img"
+                    ><FaImages />   Choose Media</label
+                  >
             <input
               type="file"
               accept="image/*"
               id="img"
-              placeholder='Upload Cover Image'
               // className="hide_file"
               onChange={(e) => setImg((prev) => e.target.files[0])}
+              style={{
+                "display" : "none"
+              }}
               />
           {/* </div> */}
           <br />
-          <WrapItem>
-            <Button 
+          <div>
+          <Button 
             colorScheme='teal'
             type='submit'> 
               <FaUpload /> Publish Image
             </Button>
-          </WrapItem>
+          </div>
         </div>
       </form>
       <div className="load">
