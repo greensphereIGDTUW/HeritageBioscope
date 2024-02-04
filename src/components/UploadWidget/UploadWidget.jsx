@@ -66,7 +66,7 @@ const UploadWidget = ({img, setImg}) => {
               {/* <FaImages /> */}
 
                   <label id="file-input-label" for="img"
-                    ><FaImages />   Choose Media</label
+                    ><FaImages />   Choose Media         </label
                   >
             <input
               type="file"
@@ -81,11 +81,16 @@ const UploadWidget = ({img, setImg}) => {
           {/* </div> */}
           <br />
           <div>
-          <Button 
+            <button
+              type='submit'
+              className='submit-image-btn'
+            ><FaUpload /> Publish Image
+            </button>
+          {/* <Button 
             colorScheme='teal'
             type='submit'> 
               <FaUpload /> Publish Image
-            </Button>
+            </Button> */}
           </div>
         </div>
       </form>
