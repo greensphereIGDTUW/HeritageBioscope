@@ -6,9 +6,9 @@ const Writeblog = () => {
   return (
     <div className="writeblog-container">
       <div class="center">
-      <Link to= "/write">
-      <button className='bttn'><Link to= "/write"></Link>Write new blog</button>
-      </Link>
+      {/* <Link to= "/write"> */}
+      <button className='bttn'><Link to= "/write">Write new blog</Link></button>
+      {/* </Link> */}
       </div>
       
     </div>
