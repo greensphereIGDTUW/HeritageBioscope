@@ -12,7 +12,7 @@ const Footer = () => (
       <div className="app__footer-links_contact">
         <h1 className="app__footer-headtext">Contact Us</h1>
         <p >IGDTUW, Kashmere Gate, New Delhi, Delhi, India</p>
-        <p >123456789</p>
+        {/* <p >123456789</p> */}
         
       </div>
 
