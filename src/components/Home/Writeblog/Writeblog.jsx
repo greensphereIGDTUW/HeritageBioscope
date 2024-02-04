@@ -3,16 +3,16 @@ import { Link, useNavigate } from "react-router-dom";
 import './Writeblog.css';
 
 const Writeblog = () => {
-  const navigate = useNavigate();
-  const navigateWrite = () => {
-    navigate('/write')
-  }
+  // const navigate = useNavigate();
+  // const navigateWrite = () => {
+  //   navigate('/write')
+  // }
   return (
     <div className="writeblog-container">
       <div class="center">
-      {/* <Link to= "/write"> */}
-      <button className='bttn' onClick={navigateWrite}>Write new blog</button>
-      {/* </Link> */}
+      <Link to= "/write">
+      <button className='bttn'><Link to= "/write">Write new blog</Link></button>
+      </Link>
       </div>
       
     </div>
