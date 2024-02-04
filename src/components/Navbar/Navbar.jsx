@@ -32,7 +32,7 @@ const Navbar = () => {
         <li className="p__opensans"><Link to= "/AboutUs">About Us</Link></li>
         <li className="p__opensans"><Link to= "/Blog">Blog </Link></li>
         <li className="p__opensans"><Link to= "/Community">Community</Link></li>
-        {/* <li className="p__opensans"><Link to= "/News">News</Link></li> */}
+        <li className="p__opensans"><Link to= "/News">News</Link></li>
         
       </ul>
       {/* {!user && (
@@ -58,7 +58,7 @@ const Navbar = () => {
               <li><a href="#about" onClick={() => setToggleMenu(false)}><Link to= "/AboutUs">About Us</Link></a></li>
               <li><a href="#menu" onClick={() => setToggleMenu(false)}><Link to= "/Blog">Blog </Link></a></li>
               <li><a href="#awards" onClick={() => setToggleMenu(false)}><Link to= "/Community">Community</Link></a></li>
-              {/* <li><a href="#awards" onClick={() => setToggleMenu(false)}><Link to= "/News">News</Link></a></li> */}
+              <li><a href="#awards" onClick={() => setToggleMenu(false)}><Link to= "/News">News</Link></a></li>
 
               {/* <li><a href="#contact" onClick={() => setToggleMenu(false)}>Contact</a></li> */}
             </ul>
