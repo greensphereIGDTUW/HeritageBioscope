@@ -63,15 +63,19 @@
 }
 
 /* Media query for phones */
-@media (max-width: 480px) {
-    #text {
+@media (max-width: 576px) {
+    .parallax #text {
         font-weight: normal;
-        font-size: 2em; /* Adjust font size for phones */
-        color: teal; 
+        font-size: 30px; /* Adjust font size for phones */
+        color: teal;
     }
 
     .sec {
         padding: 5% 3%; /* Adjust padding for phones */
+    }
+
+    .sec h4{
+        font-size: 20px;
     }
 }
 

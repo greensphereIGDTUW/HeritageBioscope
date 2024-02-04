@@ -142,7 +142,7 @@
     }
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 710px) {
     .app__navbar-links {
         display: none;
     }
