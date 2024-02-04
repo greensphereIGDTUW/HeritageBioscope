@@ -1,14 +1,18 @@
 import React from 'react'
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import './Writeblog.css';
 
 const Writeblog = () => {
+  const navigate = useNavigate();
+  const navigateWrite = () => {
+    navigate('/write')
+  }
   return (
     <div className="writeblog-container">
       <div class="center">
       {/* <Link to= "/write"> */}
-      <Link to= "/write"><button className='bttn'>Write new blog</button>
-      {/* </Link> */}</Link>
+      <button className='bttn' onClick={navigateWrite}>Write new blog</button>
+      {/* </Link> */}
       </div>
       
     </div>
