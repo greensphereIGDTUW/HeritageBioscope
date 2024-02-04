@@ -40,7 +40,7 @@ const GreensphereNews = () => {
         </div>
       </div>
       <div className="news-cards-container">
-      {articles.length >0 && articles.map((article, index) => (
+      {articles && articles.length >0 && articles.map((article, index) => (
         <div> 
         {article.title!=="[Removed]" && 
                   <div
