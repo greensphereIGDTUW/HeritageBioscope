@@ -22,6 +22,7 @@ function Community() {
   const [newPost, setNewPost] = useState({});  
   const [photo, setPhoto] = useState(null); 
   const [loading, setLoading] = useState(false); 
+  const [showCommentBox, setShowCommentBox] = useState(false); 
 
   const fetchPosts = async () => {
     try {
@@ -31,6 +32,18 @@ function Community() {
       console.log('Error:', error.message);
     }
   };
+
+  const handleLike = async (postId) => {
+    axios
+    .patch(`https://heritagebioscope.onrender.com/api/posts/${postId}/likePost`)
+    .then((response) => {
+        const updatedPosts = postsData.map((post) =>
+            post._id === postId ? response.data : post
+        );
+        setPostsData(updatedPosts);
+    })
+    .catch((error) => console.error("Error liking post:", error));
+  }
 
   useEffect(() => {
     fetchPosts();
@@ -146,8 +159,36 @@ function Community() {
               <div classname='postimg'><img src={post.Photo} alt="Post Image" /><br /><br /></div>
             } 
               {post.Content}<br /><br />
-              <hr style={{ border: '0', height: '1px', background: '#444' }} />
-
+              <div className="post-actions">
+                {/* <button onClick={() => setShowCommentBox(true)}><i class="fa fa-comment" aria-hidden="true"></i> Comment</button> */}
+                <hr style={{ border: '0', height: '1px', background: '#444' }} />
+                <div className="love-post">
+                  <h6>{post.num_likes}</h6>
+                  <button onClick={() => handleLike(post._id)}><i className="fa fa-heart" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+              <div className="post-comment-box">
+              <input type="text" className='post-comments' id='post-comments' style={{
+                  display: showCommentBox===false?'none':'block',
+                  borderRadius: '20px',
+                  padding: '10px', 
+                  marginTop: '20px', 
+                  border: '1px solid gray'
+                }}
+                placeholder='Add your name...'
+                />
+                <input type="text" className='post-comments' id='post-comments' style={{
+                  display: showCommentBox===false?'none':'block',
+                  borderRadius: '20px',
+                  padding: '10px', 
+                  marginTop: '20px',
+                  border: '1px solid gray',
+                  width: '100%'
+                }}
+                placeholder='Add a comment...'
+                />
+              </div>
             </div>
           </Box>
         ))}

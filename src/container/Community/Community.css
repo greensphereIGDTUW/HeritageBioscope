@@ -64,3 +64,30 @@ input[type="file"]::file-selector-button {
     max-width: 90%;
   }
 }
+
+.post-actions{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.8rem;
+}
+
+.fa-heart{
+  color: red;
+}
+
+.love-post{
+  display: flex;
+  gap: 0.6rem; 
+}
+
+.post-comments{
+  border-radius: 20px;
+  display: none;
+  padding: 10px;
+}
+
+.post-comment-box{
+  display: flex;
+  justify-content: space-between;
+  gap: 20px; 
+}
