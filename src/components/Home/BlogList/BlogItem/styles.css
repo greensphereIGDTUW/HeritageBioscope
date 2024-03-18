@@ -77,3 +77,9 @@
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 20px 
 }
+
+/* .blog-item.image{
+  padding-bottom: 5px;
+  height: 200px;
+  width: 360px;
+} */

@@ -8,8 +8,7 @@ const Header = () => (
       <span>“</span> Blog <span>”</span>
     </h1>
     <p>
-      Awesome place to make oneself <br /> productive and entertained through
-      daily updates.
+    Share your in-depth insights, personal narratives, and intriguing stories related to heritage!
     </p>
   </header>
 );

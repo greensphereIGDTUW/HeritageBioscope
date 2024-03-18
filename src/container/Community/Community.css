@@ -91,3 +91,10 @@ input[type="file"]::file-selector-button {
   justify-content: space-between;
   gap: 20px; 
 }
+
+.community-byhead{
+  text-align: center;
+  font-family: 'Merriweather', serif;
+  font-weight: 400;
+  font-size: 1.3rem;
+}
