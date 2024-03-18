@@ -106,6 +106,7 @@ function Community() {
   return (
     <div className="app-container">
       <h1 className="heading">Latest Posts on Heritage</h1>
+      <h2 className='community-byhead'>Where Heritage Comes Alive in Bite-Sized Posts!</h2>
 
       <Box className="create-post-box">
         <h2>Create Post</h2>
