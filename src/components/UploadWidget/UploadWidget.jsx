@@ -4,6 +4,7 @@ import { ThreeDots } from 'react-loader-spinner';
 import './UploadWidget.css'; 
 import { Button, WrapItem } from '@chakra-ui/react';
 import { FaUpload, FaImages } from 'react-icons/fa';
+import { toast, ToastContainer} from 'react-toastify';
 
 const UploadWidget = ({img, setImg}) => {
   // const cloudinaryRef = useRef(); 
@@ -35,9 +36,31 @@ const UploadWidget = ({img, setImg}) => {
       const res = await axios.post(api, data);
       const { secure_url } = res.data;
       console.log(secure_url);
+
+      toast.success('Image uploaded successfully!', {
+        position: 'top-right',
+        autoClose: 3000, // Time in milliseconds, set to 0 to keep the toast open
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });  
+
       return secure_url;
     } catch (error) {
       console.error(error);
+
+      toast.error('Error uploading image. Please try again.', {
+        position: 'top-right',
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+
     }
   }
 
@@ -108,6 +131,17 @@ const UploadWidget = ({img, setImg}) => {
           />
         }
       </div>
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
       {/* <button onClick={() => {widgetRef.current.open()}}><i className="writeIcon fas fa-plus"></i></button> */}
     </>
   ); 
