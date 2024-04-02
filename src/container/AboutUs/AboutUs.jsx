@@ -19,14 +19,12 @@ const AboutUs = () => {
         <h2 className="primary-subheading">About Us</h2>
         <p className="primary-heading">
         “Greensphere” is an Environmental Society which was formed in October 2008 
-        by the students of IGDTUW with Dr. Ranu Gadi, as the Faculty Coordinator. 
-        Currently, the society is under the guidance of Dr. Bhavani Prasad Naik,
-        who holds the position of Faculty Advisor.
+        by the students of IGDTUW. 
 
         </p>
         <br></br>
         <p className="primary-heading">
-        Heritage Bioscope is an innovative project  which aims to broaden the conventional
+        Heritage Bioscope is an innovative project in collaboration with the WWF-India ECHO Program. It aims to broaden the conventional
         perception of 'heritage' beyond history, advocating for inclusivity that embraces 
         not only cultural and national elements but also our natural heritage and highlights 
         the significance of biodiversity. Guided by the visionary tagline "Seeing Cultural heritage 
