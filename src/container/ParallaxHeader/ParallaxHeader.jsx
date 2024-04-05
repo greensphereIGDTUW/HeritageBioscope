@@ -2,9 +2,34 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './ParallaxHeader.css';
 import { images } from '../../constants';
+import axios from 'axios';
 const ParallaxComponent = () => {
+
+  const [blogsCount, setBlogsCount] = useState(0); 
+  const [postsCount, setPostsCount] = useState(0); 
+
+  const fetchBlogsCount = async () => {
+    try {
+      const response = await axios.get('http://localhost:5500/api/count/blog'); 
+      setBlogsCount(response.data); 
+      console.log(response.data);
+    } catch (error) {
+      console.log("Error:", error.message); 
+    }
+  }
+  const fetchPostsCount = async () => {
+    try {
+      const response = await axios.get('http://localhost:5500/api/count/posts'); 
+      console.log(response);
+      setPostsCount(response.data); 
+    } catch (error) {
+      console.log("Error:", error.message); 
+    }
+  }
   
   useEffect(() => {
+    fetchBlogsCount(); 
+    fetchPostsCount();
     const handleScroll = () => {
     let value = window.scrollY; 
       document.getElementById('text').style.marginTop = value * 2.5 + 'px';
@@ -38,6 +63,24 @@ const ParallaxComponent = () => {
       <section className="sec">
         <h4>An innovative project at the intersection of cultural richness and natural beauty in the heart of Delhi. Guided by the visionary tagline <strong>Seeing Heritage through the Eyes of Nature</strong> our initiative seeks to redefine the traditional concept of heritage by seamlessly blending historical and natural treasures. </h4>
       </section>
+      {/* <section className="sec-stats">
+        <div className="stats-item">
+            <h3></h3>
+            <h5>Total Users </h5>
+          </div>
+        <div className="stats-item">
+          
+          <h5>Total Posts</h5>
+        </div>
+        <div className="stats-item">
+          <h3>{blogsCount}</h3>
+          <h5>Total Blogs</h5>
+        </div>
+        <div className="stats-item">
+            <h3></h3>
+            <h5>Species Documented - Campus</h5>
+          </div>
+      </section> */}
     </div>
   );
 };

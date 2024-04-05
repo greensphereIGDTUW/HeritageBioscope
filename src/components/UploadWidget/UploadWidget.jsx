@@ -31,13 +31,13 @@ const UploadWidget = ({img, setImg}) => {
     try {
       let cloudName = process.env.REACT_APP_CLOUDINARY_CLOUD_NAME;
       let resourceType = 'image';
-      let api = `https://api.cloudinary.com/v1_1/dmg4zjmrp/image/upload`;
+      let api = `https://api.cloudinary.com/v1_1/${REACT_APP_CLOUDINARY_CLOUD_NAME}/image/upload`;
 
       const res = await axios.post(api, data);
       const { secure_url } = res.data;
       console.log(secure_url);
 
-      toast.success('Image uploaded successfully!', {
+      toast.success(`Image uploaded successfully! You can view the image at ${secure_url}`, {
         position: 'top-right',
         autoClose: 3000, // Time in milliseconds, set to 0 to keep the toast open
         hideProgressBar: false,
