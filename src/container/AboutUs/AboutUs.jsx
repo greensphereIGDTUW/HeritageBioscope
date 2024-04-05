@@ -27,8 +27,7 @@ const AboutUs = () => {
         Heritage Bioscope is an innovative project in collaboration with the WWF-India ECHO Program. It aims to broaden the conventional
         perception of 'heritage' beyond history, advocating for inclusivity that embraces 
         not only cultural and national elements but also our natural heritage and highlights 
-        the significance of biodiversity. Guided by the visionary tagline "Seeing Cultural heritage 
-        through the Eyes of natural heritage.
+        the significance of biodiversity. Guided by the visionary tagline "Seeing Heritage Through the Eyes of Nature!"
 
         <br />
         <br />
