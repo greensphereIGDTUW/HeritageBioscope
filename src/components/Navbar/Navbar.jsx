@@ -57,6 +57,7 @@ const Navbar = () => {
             <ul className="app__navbar-smallscreen_links">
               <li><a href="#home" onClick={() => setToggleMenu(false)}><Link to= "/">Home</Link></a></li>
               <li><a href="#about" onClick={() => setToggleMenu(false)}><Link to= "/AboutUs">About Us</Link></a></li>
+              <li><a href="https://heritagebioscope-documentation.netlify.app/" onClick={() => setToggleMenu(false)}>Documentation</a></li>
               <li><a href="#menu" onClick={() => setToggleMenu(false)}><Link to= "/Blog">Blog </Link></a></li>
               <li><a href="#awards" onClick={() => setToggleMenu(false)}><Link to= "/Community">Community</Link></a></li>
               {/* <li><a href="#awards" onClick={() => setToggleMenu(false)}><Link to= "/News">News</Link></a></li> */}
