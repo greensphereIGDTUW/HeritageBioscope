@@ -30,6 +30,7 @@ const Navbar = () => {
       <ul className="app__navbar-links">
         <li className="p__opensans"><Link to= "/">Home</Link></li>
         <li className="p__opensans"><Link to= "/AboutUs">About Us</Link></li>
+        <li className="p__opensans"><a href="https://heritagebioscope-documentation.netlify.app/">Documentation</a></li>
         <li className="p__opensans"><Link to= "/Blog">Blog </Link></li>
         <li className="p__opensans"><Link to= "/Community">Community</Link></li>
         {/* <li className="p__opensans"><Link to= "/News">News</Link></li> */}
