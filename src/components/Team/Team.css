@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap');
+
+.team-head{
+    text-align: center;
+    color: teal;
+    font-size: 40px;
+    font-family: 'Merriweather', serif;
+    font-weight: 800;  
+    margin-top: 20px;
+}
+
+.card-container {
+    /* width: calc(33.33% - 2%); */
+    /* float: left; */
+    margin: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #f5fafa;
+    border: 2px solid #69c2b0; /* Mint green border */
+    border-radius: 10px;
+    padding: 20px;
+    font-family: 'Merriweather', serif;
+    height: 430px;
+  }
+  
+  .card-container h3 {
+    margin: 6px 0;
+    text-align: center;
+    color: #69c2b0; /* Mint green text */
+  }
+  
+  .card-container h6 {
+    margin: 5px 0;
+    text-align: center;
+    text-transform: uppercase;
+    color: #3a6044; /* Dark green text */
+  }
+  
+  .card-container p {
+    font-size: 14px;
+    line-height: 21px;
+    text-align: center;
+    color: #6b8c76; /* Light green text */
+  }
+  
+  .card-container a {
+    display: block;
+    margin-top: 15px;
+    text-align: center;
+    color: #03b1a2; /* Mint green link */
+    text-decoration: none;
+  }
+  
+  .card-container a:hover {
+    color: #02837f; /* Darker shade of mint green on hover */
+  }
+  
+  .card-container img {
+    /* display: block;
+    margin: 0 auto 15px auto; */
+    border-radius: 50%; 
+    width: 200px; /*Adjust image size*/
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .card-container i {
+    margin-top: 20px;
+    color: teal; 
+  }
+  
+  .gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px 50px; 
+  }
+
+  /* .card-container {
+    width: 30%;
+} */
+
+@media only screen and (max-width: 768px) {
+    .card-container {
+        width: 48%;
+        margin: 1% 0;
+    }
+}
+@media only screen and (max-width: 480px) {
+    .card-container {
+        width: 100%;
+        margin: 2% 0;
+    }
+}

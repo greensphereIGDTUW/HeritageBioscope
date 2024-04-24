@@ -2,9 +2,11 @@ import React from 'react';
 import { BsFillPlayCircleFill } from "react-icons/bs";
 import { images } from '../../constants';
 import './AboutUs.css';
+import Team from '../../components/Team/Team';
 
 const AboutUs = () => {
   return (
+    <>
     <div className="aboutus-overall">
       <div className="about-section-container">
       <div className="about-background-image-container">
@@ -57,6 +59,10 @@ const AboutUs = () => {
     </div>
     
     </div>
+
+    <Team />
+
+    </>
     
   );
 
