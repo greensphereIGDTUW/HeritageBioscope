@@ -3,6 +3,8 @@ import React, { useEffect, useRef, useState } from 'react';
 import './ParallaxHeader.css';
 import { images } from '../../constants';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
+
 const ParallaxComponent = () => {
 
   const [blogsCount, setBlogsCount] = useState(0); 
@@ -61,7 +63,9 @@ const ParallaxComponent = () => {
         <img src={images.plant} alt="plant" id="plant" />
       </section>
       <section className="sec">
-        <h4>An innovative project at the intersection of cultural richness and natural beauty in the heart of Delhi. Guided by the visionary tagline <strong>Seeing Heritage through the Eyes of Nature</strong> our initiative seeks to redefine the traditional concept of heritage by seamlessly blending historical and natural treasures. </h4>
+        <h4>An innovative project in collaboration with <Link to={{ pathname: "https://www.wwfindia.org/" }} target="_blank" >
+          <b>WWF-India</b> </Link>
+ ECHO Program at the intersection of cultural richness and natural beauty in the heart of Delhi. Guided by the visionary tagline <strong>Seeing Heritage through the Eyes of Nature</strong> our initiative seeks to redefine the traditional concept of heritage by seamlessly blending historical and natural treasures. </h4>
       </section>
       {/* <section className="sec-stats">
         <div className="stats-item">
